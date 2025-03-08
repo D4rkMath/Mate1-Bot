@@ -54,15 +54,6 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
-        .toggle-button {
-            background-color: #f3770e;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            display: inline-block;
-            margin-top: 10px;
-        }
         .profile {
             display: flex;
             align-items: center;  /*centrar items*/
@@ -87,21 +78,15 @@
             border-radius: 50px;
             cursor: pointer;
         }
-        .hidden {
-            display: none; 
-        }
     </style>
 </head>
 <body>
-    <button onclick="toggleSection('contenido')">📚 Contenido del curso</button>
-    <button onclick="toggleSection('responsable')">👨‍🏫 Responsable del curso</button>
-    <button onclick="toggleSection('temario')">📖 Temario semanal del curso</button>
     <div class="header">
         <h1>Matemática I 📘</h1>
         <h1>Universidad Científica del Sur</h1>
     </div>
     
-    <div id="contenido" class="hidden">
+   <div class="container">
         <h2>📚 Contenido del curso</h2>
         <div class="grid">
             <div class="card">
@@ -136,8 +121,7 @@
                 <p>8. Optimización</p>
             </div>
         </div>
-
-        <div id="responsable" class="hidden">
+       
         <h2>👨‍🏫 Responsable del curso</h2>
         <div class="profile">
             <img src="profesor.jpg" alt="M.Sc. Edú Paredes">
@@ -147,7 +131,6 @@
             </div>
         </div>
             
-        <div id="temario" class="hidden">
         <h2>📖 Temario semanal del curso</h2>
         <div class="grid">
             <div class="card"><h3>Semana 1</h3><p>1.1. Plano cartesiano y relaciones</p><p>1.2. Funciones</p></div>
