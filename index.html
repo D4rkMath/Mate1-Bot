@@ -1,1 +1,158 @@
-<h1>Github pages</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemática I - UCS</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #01043c; /* fondo color azul */
+            color: #ffffff; /* letra color blanco */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            text-align: center; /* texto centrado */
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .card {             
+            text-align: center; /* texto centrado en tarjetas*/
+            background-color: #d5d7e4; /* fondo celeste claro */
+            color: #000000; /* texto color negro*/
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+      .card p {
+            text-align: left; /* Alinea los párrafos a la izquierda */
+            margin: 4px 0; /* Añade un pequeño margen entre los párrafos */
+        }
+        .header {
+            text-align: center;  /* texto centrado*/
+            padding: 50px 20px;
+            background-color: #f3770e;  /*fondo color ladrillo*/
+            border-radius: 0 0 20px 20px;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .cta-button {
+            background-color: #7796c2;  /*fondo color celeste*/
+            color: #ffffff; /* texto color blanco*/
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .profile {
+            display: flex;
+            align-items: center;  /*centrar items*/
+            gap: 20px;
+            background-color: #d5d7e4; /* fondo celeste claro */
+            color: #000000;  /* texto color negro*/
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .chatbot-button {    /* botón de chatbot */
+            position: fixed;   /* fijar posición del botón*/
+            bottom: 20px;
+            right: 20px;
+            background-color: #f3770e;  /*fondo color ladrillo*/
+            color: #ffffff;    /* texto color blanco*/
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Matemática I - Universidad Científica del Sur 📘</h1>
+        <a href="#chatbot" class="cta-button">¡Habla con Mate 1-Bot!</a>
+    </div>
+    
+    <div class="container">
+        <h2>📚 Contenido del curso</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Módulo I:</h3>
+                <h3>Funciones</h3>
+                <p>1. Plano cartesiano y relaciones.</p>
+                <p>2. Función lineal</p>
+                <p>3. Función cuadrática</p>
+                <p>4. Función exponencial</p>
+                <p>5. Función logaritmo</p>
+                <p>6. Función seno y coseno</p>
+                <p>7. Álgebra de funciones</p>
+                <p>8. Función inversa</p>
+            </div>
+            <div class="card">
+                <h3>Módulo II:</h3>
+                <h3>Límites y continuidad de funciones</h3>
+                <p>1. Límites y continuidad</p>
+                <p>2. Límites indeterminados</p>
+                <p>3. Asíntotas y gráficas</p>
+                <p>4. Aplicaciones con límites</p>
+            </div>
+            <div class="card">
+                <h3>Módulo III:</h3>
+                <h3>Derivada de funciones y sus aplicaciones</h3>
+                <p>1. La derivada</p>
+                <p>2. Regla de la cadena</p>
+                <p>3. Derivada implícita</p>
+                <p>4. Fórmulas de derivación</p>
+                <p>6. Razón de cambio</p>
+                <p>7. Gráfica con derivadas </p>
+                <p>8. Optimización</p>
+            </div>
+        </div>
+        
+        <h2>👨‍🏫 Responsable del curso</h2>
+        <div class="profile">
+            <img src="profesor.jpg" alt="M.Sc. Edú Paredes">
+            <div>
+                <h3>MSc. Edú Paredes</h3>
+                <p>Matemático, egresado de la UNMSM con maestría en Matemática Aplicada y Computacional, actualmente cursando el doctorado en Matemática en el IMCA.</p>
+            </div>
+        </div>
+        
+        <h2>📖 Temario semanal del curso</h2>
+        <div class="grid">
+            <div class="card"><h3>Semana 1</h3><p>1.1. Plano cartesiano y relaciones</p><p>1.2. Funciones</p></div>
+            <div class="card"><h3>Semana 2</h3><p>2.1. Modelos lineales</p><p>2.2. Función cuadrática</p></div>
+            <div class="card"><h3>Semana 3</h3><p>3.1. Modelos cuadráticos</p><p>3.2. Función exponencial y logaritmo</p></div>
+            <div class="card"><h3>Semana 4</h3><p>4.1. Modelos exponenciales y logarítmicos</p><p>4.2. Función seno y coseno</p></div>
+            <div class="card"><h3>Semana 5</h3><p>5.1. Evaluación continua 1</p><p>5.2. Modelos trigonométricos</p></div>
+            <div class="card"><h3>Semana 6</h3><p>6.1. Álgebra de funciones</p><p>6.2. Función inversa</p></div>
+            <div class="card"><h3>Semana 7</h3><p>7.1. Límites y continuidad</p><p>7.2. Límites indeterminados</p></div>
+            <div class="card"><h3>Semana 8</h3><p>8.1. Consolidación de aprendizajes</p><p>8.2. Evaluación parcial</p></div>
+            <div class="card"><h3>Semana 9</h3><p>9.1. Asíntotas y gráficas</p><p>9.2. Aplicaciones con límites</p></div>
+            <div class="card"><h3>Semana 10</h3><p>10.1. La derivada</p><p>10.2. Regla de la cadena</p></div>
+            <div class="card"><h3>Semana 11</h3><p>11.1. Derivada implícita</p><p>11.2. Fórmulas de derivación</p></div>
+            <div class="card"><h3>Semana 12</h3><p>12.1. Evaluación continua 2</p><p>12.2. Aproximaciones y L'Hôpital</p></div>
+            <div class="card"><h3>Semana 13</h3><p>13.1. Razón de cambio</p><p>13.2. Gráfica con derivadas I</p></div>
+            <div class="card"><h3>Semana 14</h3><p>14.1. Gráfica con derivadas II</p><p>14.2. Optimización</p></div>
+            <div class="card"><h3>Semana 15</h3><p>15.1. Evaluación continua 3</p><p>15.2. Evaluación final-Parte I</p></div>
+            <div class="card"><h3>Semana 16</h3><p>16.1. Evaluación final-Parte II</p></div>
+        </div>
+    </div>
+    
+    <div id="chatbot" class="chatbot-button">💬 Chatbot</div>
+    
+</body>
+</html>
