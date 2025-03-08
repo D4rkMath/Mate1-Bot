@@ -18,6 +18,13 @@
             margin: auto;
             padding: 20px;
         }
+        .options{
+            text-align: center;
+            display: inline-block;
+            width: 100%;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
         .card {             
             text-align: center; /* texto centrado en tarjetas*/
             background-color: #d5d7e4; /* fondo celeste claro */
@@ -85,6 +92,27 @@
         <h1>Matemática I 📘</h1>
         <h1>Universidad Científica del Sur</h1>
     </div>
+
+    <div class="options">
+        <button id="btnShow" class="btn btn-primary" onclick="ShowHide()">
+            Mostrar/Ocultar
+        </button>
+    </div>
+
+    <script>
+        function ShowHide(){
+            var container = document.getElementsByClassName("container")[0];
+            if(container.style.visibility =="hidden"){
+                container.style.visibility ="visible";
+            }
+            else{
+                container.style.visibility ="hidden";
+            }
+        }
+    </script>
+            
+            
+            
     
    <div class="container">
         <h2>📚 Contenido del curso</h2>
