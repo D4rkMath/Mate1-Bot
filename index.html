@@ -50,9 +50,18 @@
             margin-top: 10px;
         }
         .grid {
-            display: grid;
+            display: none;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
+        }
+        .toggle-button {
+            background-color: #f3770e;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 10px;
         }
         .profile {
             display: flex;
@@ -87,7 +96,8 @@
     </div>
     
     <div class="container">
-        <h2>📚 Contenido del curso</h2>
+        <h2 class="toggle-button" onclick="toggleContent()">📚 Contenido del curso</h2>
+        <div class="grid" id="contenidoCurso">
         <div class="grid">
             <div class="card">
                 <h3>Módulo I:</h3>
@@ -151,6 +161,17 @@
             <div class="card"><h3>Semana 16</h3><p>16.1. Evaluación final-Parte II</p></div>
         </div>
     </div>   
+
+    <script>
+        function toggleContent() {
+            var content = document.getElementById("contenidoCurso");
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "grid";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
     
 <script type="text/javascript">
   (function(d, t) {
