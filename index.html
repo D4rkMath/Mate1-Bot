@@ -150,34 +150,26 @@
             <div class="card"><h3>Semana 15</h3><p>15.1. Evaluación continua 3</p><p>15.2. Evaluación final-Parte I</p></div>
             <div class="card"><h3>Semana 16</h3><p>16.1. Evaluación final-Parte II</p></div>
         </div>
-    </div>
+    </div>   
+
+   <div id="chatbot" class="chatbot-button" onclick="openChatbot()">💬 Chatbot</div>
     
-    <div id="chatbot" class="chatbot-button" onclick="openChatbot()">💬 Chatbot</div>
-
-    <script>
-        function openChatbot() {
-            window.voiceflow.chat.open();
-        }
-    </script>
-
-    <script type="text/javascript">
-        (function(d, t) {
-            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-            v.onload = function() {
-                window.voiceflow.chat.load({
-                    verify: { projectID: '67b7358ac585073095b48e24' },
-                    url: 'https://general-runtime.voiceflow.com',
-                    versionID: 'production',
-                    voice: {
-                        url: "https://runtime-api.voiceflow.com"
-                    }
-                });
-            }
-            v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
-            v.type = "text/javascript";
-            s.parentNode.insertBefore(v, s);
-        })(document, 'script');
-    </script>
+<script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '67b7358ac585073095b48e24' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          voice: {
+            url: "https://runtime-api.voiceflow.com"
+          }
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
     
 </body>
 </html>
