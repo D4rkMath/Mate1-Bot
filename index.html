@@ -59,20 +59,11 @@
             height: 100px;
             border-radius: 50%;
         }
-        .chatbot-button {    /* botón de chatbot */
-            position: fixed;   /* fijar posición del botón*/
-            bottom: 20px;
-            right: 20px;
-            background-color: #f3770e;  /*fondo color ladrillo*/
-            color: #ffffff;    /* texto color blanco*/
-            padding: 10px 20px;
-            border-radius: 50px;
-            cursor: pointer;
-        }
+
         .toggle-button {
-            background-color: #7796c2;
+            background: none;
             border: none;
-            color: #000000;
+            color: #ffffff;
             font-size: 1.5em;
             cursor: pointer;
             padding: 10px;
@@ -169,7 +160,24 @@
                 </div>
         </div>
     </div>   
-
+       
+<script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '67b7358ac585073095b48e24' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          voice: {
+            url: "https://runtime-api.voiceflow.com"
+          }
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+       
 <script>
         function toggleSection(sectionId) {
             const section = document.getElementById(sectionId);
@@ -186,23 +194,6 @@
         document.querySelectorAll('.toggle-content').forEach(content => {
             content.style.display = 'none';
         });
-</script>
-    
-<script type="text/javascript">
-  (function(d, t) {
-      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      v.onload = function() {
-        window.voiceflow.chat.load({
-          verify: { projectID: '67b7358ac585073095b48e24' },
-          url: 'https://general-runtime.voiceflow.com',
-          versionID: 'production',
-          voice: {
-            url: "https://runtime-api.voiceflow.com"
-          }
-        });
-      }
-      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-  })(document, 'script');
 </script>
     
 </body>
