@@ -59,7 +59,16 @@
             height: 100px;
             border-radius: 50%;
         }
-
+        .chatbot-button {    /* botón de chatbot */
+            position: fixed;   /* fijar posición del botón*/
+            bottom: 20px;
+            right: 20px;
+            background-color: #f3770e;  /*fondo color ladrillo*/
+            color: #ffffff;    /* texto color blanco*/
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
         .toggle-button {
             background: none;
             border: none;
@@ -160,6 +169,9 @@
                 </div>
         </div>
     </div>   
+       
+    <div class="chatbot-button" onclick="window.voiceflow.chat.open()">💬 Chatbot</div>
+
        
 <script type="text/javascript">
   (function(d, t) {
