@@ -95,7 +95,7 @@
     
    <div class="container">
        <div class="toggle-container">
-        <button class="toggle-button" onclick="toggleSection('contenido')">📚 Contenido del curso ▼</button>
+        <button class="toggle-button" onclick="toggleSection('contenido')">📚 Contenido del curso </button>
             <div id="contenido" class="toggle-content">  
                 <div class="grid">
                     <div class="card">
@@ -134,7 +134,7 @@
         </div>  
 
         <div class="toggle-container">
-           <button class="toggle-button" onclick="toggleSection('responsable')">👨‍🏫 Responsable del curso ▼</button>
+           <button class="toggle-button" onclick="toggleSection('responsable')">👨‍🏫 Responsable del curso </button>
                 <div id="responsable" class="toggle-content">
                     <div class="profile">
                         <img src="profesor.jpg" alt="M.Sc. Edú Paredes">
@@ -146,7 +146,7 @@
         </div>
             
         <div class="toggle-container">
-            <button class="toggle-button" onclick="toggleSection('temario')">📖 Temario semanal del curso ▼</button>
+            <button class="toggle-button" onclick="toggleSection('temario')">📖 Temario semanal del curso </button>
                 <div id="temario" class="toggle-content">
                     <div class="grid">
                         <div class="card"><h2>Semana 1</h2><p>1.1. Plano cartesiano y relaciones</p><p>1.2. Funciones</p></div>
@@ -177,10 +177,8 @@
             
             if (section.style.display === 'none' || !section.style.display) {
                 section.style.display = 'block';
-                button.innerHTML = button.innerHTML.replace('▼', '▲');
             } else {
                 section.style.display = 'none';
-                button.innerHTML = button.innerHTML.replace('▲', '▼');
             }
         }
 
