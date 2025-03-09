@@ -18,13 +18,6 @@
             margin: auto;
             padding: 20px;
         }
-        .options{
-            text-align: center;
-            display: inline-block;
-            width: 100%;
-            margin-top: 15px;
-            margin-bottom: 15px
-        }
         .card {             
             text-align: center; /* texto centrado en tarjetas*/
             background-color: #d5d7e4; /* fondo celeste claro */
@@ -46,15 +39,6 @@
         }
         .header h1 {
             margin: 0;
-        }
-        .cta-button {
-            background-color: #7796c2;  /*fondo color celeste*/
-            color: #ffffff; /* texto color blanco*/
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
         }
         .grid {
             display: grid;
@@ -85,6 +69,22 @@
             border-radius: 50px;
             cursor: pointer;
         }
+        .toggle-button {
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+        }
+        .toggle-container {
+            margin: 20px 0;
+        }
+        .toggle-content {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -99,83 +99,102 @@
         </button>
     </div>
 
-    <script>
-        function ShowHide(){
-            var container = document.getElementsByClassName("container")[0];
-            if(container.style.visibility == "hidden"){
-                container.style.visibility = "visible";
-            }
-            else{
-                container.style.visibility = "hidden";
-            }
-        }        
-    </script>
-    
    <div class="container">
-        <h2>📚 Contenido del curso</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Módulo I:</h3>
-                <h3>Funciones</h3>
-                <p>1. Plano cartesiano y relaciones.</p>
-                <p>2. Función lineal</p>
-                <p>3. Función cuadrática</p>
-                <p>4. Función exponencial</p>
-                <p>5. Función logaritmo</p>
-                <p>6. Función seno y coseno</p>
-                <p>7. Álgebra de funciones</p>
-                <p>8. Función inversa</p>
-            </div>
-            <div class="card">
-                <h3>Módulo II:</h3>
-                <h3>Límites y continuidad de funciones</h3>
-                <p>1. Límites y continuidad</p>
-                <p>2. Límites indeterminados</p>
-                <p>3. Asíntotas y gráficas</p>
-                <p>4. Aplicaciones con límites</p>
-            </div>
-            <div class="card">
-                <h3>Módulo III:</h3>
-                <h3>Derivada de funciones y sus aplicaciones</h3>
-                <p>1. La derivada</p>
-                <p>2. Regla de la cadena</p>
-                <p>3. Derivada implícita</p>
-                <p>4. Fórmulas de derivación</p>
-                <p>6. Razón de cambio</p>
-                <p>7. Gráfica con derivadas </p>
-                <p>8. Optimización</p>
-            </div>
-        </div>
-       
-        <h2>👨‍🏫 Responsable del curso</h2>
-        <div class="profile">
-            <img src="profesor.jpg" alt="M.Sc. Edú Paredes">
-            <div>
-                <h3>MSc. Edú Paredes</h3>
-                <p>Matemático, egresado de la UNMSM con maestría en Matemática Aplicada y Computacional, actualmente cursando el doctorado en Matemática en el IMCA.</p>
-            </div>
+       <div class="toggle-container">
+        <button class="toggle-button" onclick="toggleSection('contenido')">📚 Contenido del curso ▼</button>
+            <div id="contenido" class="toggle-content">  
+                <div class="grid">
+                    <div class="card">
+                        <h3>Módulo I:</h3>
+                        <h3>Funciones</h3>
+                        <p>1. Plano cartesiano y relaciones.</p>
+                        <p>2. Función lineal</p>
+                        <p>3. Función cuadrática</p>
+                        <p>4. Función exponencial</p>
+                        <p>5. Función logaritmo</p>
+                        <p>6. Función seno y coseno</p>
+                        <p>7. Álgebra de funciones</p>
+                        <p>8. Función inversa</p>
+                    </div>
+                    <div class="card">
+                        <h3>Módulo II:</h3>
+                        <h3>Límites y continuidad de funciones</h3>
+                        <p>1. Límites y continuidad</p>
+                        <p>2. Límites indeterminados</p>
+                        <p>3. Asíntotas y gráficas</p>
+                        <p>4. Aplicaciones con límites</p>
+                    </div>
+                    <div class="card">
+                        <h3>Módulo III:</h3>
+                        <h3>Derivada de funciones y sus aplicaciones</h3>
+                        <p>1. La derivada</p>
+                        <p>2. Regla de la cadena</p>
+                        <p>3. Derivada implícita</p>
+                        <p>4. Fórmulas de derivación</p>
+                        <p>6. Razón de cambio</p>
+                        <p>7. Gráfica con derivadas </p>
+                        <p>8. Optimización</p>
+                    </div>   /*cierra class card*/
+                </div>   /*cierra class grid*/
+            </div>    /*cierra id contenido*/
+        </div>   /*cierra class togle container*/
+
+        <div class="toggle-container">
+           <button class="toggle-button" onclick="toggleSection('responsable')">👨‍🏫 Responsable del curso ▼</button>
+                <div id="responsable" class="toggle-content">
+                    <div class="profile">
+                        <img src="profesor.jpg" alt="M.Sc. Edú Paredes">
+                    <div>
+                        <h3>MSc. Edú Paredes</h3>
+                        <p>Matemático, egresado de la UNMSM con maestría en Matemática Aplicada y Computacional, actualmente cursando el doctorado en Matemática en el IMCA.</p>
+                    </div>
+                </div>
         </div>
             
-        <h2>📖 Temario semanal del curso</h2>
-        <div class="grid">
-            <div class="card"><h3>Semana 1</h3><p>1.1. Plano cartesiano y relaciones</p><p>1.2. Funciones</p></div>
-            <div class="card"><h3>Semana 2</h3><p>2.1. Modelos lineales</p><p>2.2. Función cuadrática</p></div>
-            <div class="card"><h3>Semana 3</h3><p>3.1. Modelos cuadráticos</p><p>3.2. Función exponencial y logaritmo</p></div>
-            <div class="card"><h3>Semana 4</h3><p>4.1. Modelos exponenciales y logarítmicos</p><p>4.2. Función seno y coseno</p></div>
-            <div class="card"><h3>Semana 5</h3><p>5.1. Evaluación continua 1</p><p>5.2. Modelos trigonométricos</p></div>
-            <div class="card"><h3>Semana 6</h3><p>6.1. Álgebra de funciones</p><p>6.2. Función inversa</p></div>
-            <div class="card"><h3>Semana 7</h3><p>7.1. Límites y continuidad</p><p>7.2. Límites indeterminados</p></div>
-            <div class="card"><h3>Semana 8</h3><p>8.1. Consolidación de aprendizajes</p><p>8.2. Evaluación parcial</p></div>
-            <div class="card"><h3>Semana 9</h3><p>9.1. Asíntotas y gráficas</p><p>9.2. Aplicaciones con límites</p></div>
-            <div class="card"><h3>Semana 10</h3><p>10.1. La derivada</p><p>10.2. Regla de la cadena</p></div>
-            <div class="card"><h3>Semana 11</h3><p>11.1. Derivada implícita</p><p>11.2. Fórmulas de derivación</p></div>
-            <div class="card"><h3>Semana 12</h3><p>12.1. Evaluación continua 2</p><p>12.2. Aproximaciones y L'Hôpital</p></div>
-            <div class="card"><h3>Semana 13</h3><p>13.1. Razón de cambio</p><p>13.2. Gráfica con derivadas I</p></div>
-            <div class="card"><h3>Semana 14</h3><p>14.1. Gráfica con derivadas II</p><p>14.2. Optimización</p></div>
-            <div class="card"><h3>Semana 15</h3><p>15.1. Evaluación continua 3</p><p>15.2. Evaluación final-Parte I</p></div>
-            <div class="card"><h3>Semana 16</h3><p>16.1. Evaluación final-Parte II</p></div>
+        <div class="toggle-container">
+            <button class="toggle-button" onclick="toggleSection('temario')">📖 Temario semanal del curso ▼</button>
+                <div id="temario" class="toggle-content">
+                    <div class="grid">
+                        <div class="card"><h3>Semana 1</h3><p>1.1. Plano cartesiano y relaciones</p><p>1.2. Funciones</p></div>
+                        <div class="card"><h3>Semana 2</h3><p>2.1. Modelos lineales</p><p>2.2. Función cuadrática</p></div>
+                        <div class="card"><h3>Semana 3</h3><p>3.1. Modelos cuadráticos</p><p>3.2. Función exponencial y logaritmo</p></div>
+                        <div class="card"><h3>Semana 4</h3><p>4.1. Modelos exponenciales y logarítmicos</p><p>4.2. Función seno y coseno</p></div>
+                        <div class="card"><h3>Semana 5</h3><p>5.1. Evaluación continua 1</p><p>5.2. Modelos trigonométricos</p></div>
+                        <div class="card"><h3>Semana 6</h3><p>6.1. Álgebra de funciones</p><p>6.2. Función inversa</p></div>
+                        <div class="card"><h3>Semana 7</h3><p>7.1. Límites y continuidad</p><p>7.2. Límites indeterminados</p></div>
+                        <div class="card"><h3>Semana 8</h3><p>8.1. Consolidación de aprendizajes</p><p>8.2. Evaluación parcial</p></div>
+                        <div class="card"><h3>Semana 9</h3><p>9.1. Asíntotas y gráficas</p><p>9.2. Aplicaciones con límites</p></div>
+                        <div class="card"><h3>Semana 10</h3><p>10.1. La derivada</p><p>10.2. Regla de la cadena</p></div>
+                        <div class="card"><h3>Semana 11</h3><p>11.1. Derivada implícita</p><p>11.2. Fórmulas de derivación</p></div>
+                        <div class="card"><h3>Semana 12</h3><p>12.1. Evaluación continua 2</p><p>12.2. Aproximaciones y L'Hôpital</p></div>
+                        <div class="card"><h3>Semana 13</h3><p>13.1. Razón de cambio</p><p>13.2. Gráfica con derivadas I</p></div>
+                        <div class="card"><h3>Semana 14</h3><p>14.1. Gráfica con derivadas II</p><p>14.2. Optimización</p></div>
+                        <div class="card"><h3>Semana 15</h3><p>15.1. Evaluación continua 3</p><p>15.2. Evaluación final-Parte I</p></div>
+                        <div class="card"><h3>Semana 16</h3><p>16.1. Evaluación final-Parte II</p></div>
+                    </div>
+                </div>
         </div>
     </div>   
+
+<script>
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const button = section.previousElementSibling;
+            
+            if (section.style.display === 'none' || !section.style.display) {
+                section.style.display = 'block';
+                button.innerHTML = button.innerHTML.replace('▼', '▲');
+            } else {
+                section.style.display = 'none';
+                button.innerHTML = button.innerHTML.replace('▲', '▼');
+            }
+        }
+
+        // Ocultar todos los contenidos al cargar la página
+        document.querySelectorAll('.toggle-content').forEach(content => {
+            content.style.display = 'none';
+        });
+</script>
     
 <script type="text/javascript">
   (function(d, t) {
