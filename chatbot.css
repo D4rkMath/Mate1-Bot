@@ -148,21 +148,32 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #f3770e;
-  color: #ffffff;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+  background-color: #0066ff; /* Azul brillante */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   z-index: 1001;
-  transition: transform 0.2s;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+/* Icono de chat */
+.chatbot-button::before {
+  content: "💬";
+  font-size: 1.1rem;
+  margin-right: 4px;
 }
 
 .chatbot-button:hover {
-  transform: scale(1.1);
+  background-color: #0052cc;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
 }
