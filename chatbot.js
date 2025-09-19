@@ -28,10 +28,10 @@ function openLink(url) {
   window.open(url, "_blank");
 }
 
-function openChatGPT() {
-  const prompt = encodeURIComponent("Soy estudiante de Matemática I en la Universidad Científica del Sur. Necesito ayuda con funciones, límites o derivadas.");
-  window.open(`https://chat.openai.com/?q=${prompt}`, "_blank");
-}
+//function openChatGPT() {
+//  const prompt = encodeURIComponent("Soy estudiante de Matemática I en la Universidad Científica del Sur. Necesito ayuda con funciones, límites o derivadas.");
+//  window.open(`https://chat.openai.com/?q=${prompt}`, "_blank");
+//}
 
 function sendMessage() {
   const input = document.getElementById("userInput");
