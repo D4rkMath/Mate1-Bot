@@ -105,6 +105,41 @@
   transition: background 0.2s;
 }
 
+.category-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 5px 0;
+  background: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+  font-weight: bold;
+  position: relative;
+}
+
+.category-btn:hover {
+  background: #0052cc;
+}
+
+/* Flecha para indicar que es desplegable */
+.category-btn::after {
+  content: "▼";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+}
+
+/* Cuando está abierto, cambia la flecha */
+.category-btn.open::after {
+  content: "▲";
+}
+
 .option-btn:hover {
   background: #0052cc;
 }
