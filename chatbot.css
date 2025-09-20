@@ -175,7 +175,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 4px;
-  transform: scale(1.2); /* 👈 Escala el ícono un 120% */
+  transform: scale(1.5); /* 👈 Escala el ícono un 120% */
   transform-origin: center; /* Mantiene el centro del ícono como punto de escala */
 }
 
