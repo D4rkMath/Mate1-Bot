@@ -154,7 +154,7 @@
   border-radius: 50px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px; /* 👈 Reduce el espacio entre ícono y texto */
   font-size: 0.9rem;
   font-weight: 600;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -163,7 +163,6 @@
   transition: all 0.3s ease;
   border: none;
   outline: none;
-  transform: scale(1); /* Estado normal */
 }
 
 /* Icono de chat */
