@@ -170,8 +170,8 @@
 .chatbot-button::before {
   content: "";
   display: inline-block;
-  width: 16px;
-  height: 16px;
+  width: 19px;
+  height: 19px;
   background-image: url("chat_icono.svg");
   background-size: contain;
   background-repeat: no-repeat;
