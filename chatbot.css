@@ -166,10 +166,15 @@
 }
 
 /* Icono de chat */
-.chatbot-button::before { 
-  content: "💬";
-  font-size: 1.1rem;
-  margin-right: 4px; }
+.chatbot-button::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("chat_icono.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 8px;
 }
 
 .chatbot-button:hover {
