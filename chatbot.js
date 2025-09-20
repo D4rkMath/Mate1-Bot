@@ -1,5 +1,19 @@
 // chatbot.js
 
+function toggleSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  const button = document.querySelector(`[onclick="toggleSection('${sectionId}')"]`);
+  
+  // Alternar visibilidad
+  if (section.style.display === 'none' || section.style.display === '') {
+    section.style.display = 'block';
+    button.classList.add('open');
+  } else {
+    section.style.display = 'none';
+    button.classList.remove('open');
+  }
+}
+
 function toggleChatbot() {
   const container = document.getElementById("chatbotContainer");
   const isVisible = container.classList.contains("show");
