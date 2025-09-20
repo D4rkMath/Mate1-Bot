@@ -169,8 +169,8 @@
 .chatbot-button::before {
   content: "";
   display: inline-block;
-  width: 19px;
-  height: 19px;
+  width: 16px;
+  height: 16px;
   background-image: url("chat_icono.svg");
   background-size: contain;
   background-repeat: no-repeat;
