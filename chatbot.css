@@ -148,7 +148,7 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #0066ff; /* Azul brillante */
+  background-color: #0066ff;
   color: white;
   padding: 10px 20px;
   border-radius: 50px;
@@ -163,6 +163,7 @@
   transition: all 0.3s ease;
   border: none;
   outline: none;
+  transform: scale(1); /* Estado normal */
 }
 
 /* Icono de chat */
@@ -178,7 +179,7 @@
 }
 
 .chatbot-button:hover {
-  background-color: #0052cc;
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05); /* Aumenta un 5% al pasar el mouse */
+  box-shadow: 0 6px 15px rgba(0, 0, 102, 0.4); /* Sombra más intensa */
+  background-color: #0052cc; /* Azul un poco más oscuro */
 }
