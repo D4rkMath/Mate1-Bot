@@ -166,15 +166,10 @@
 }
 
 /* Icono de chat */
-.chatbot-button::before {
-  content: "";
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background-image: url("image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M20%2C4H4C2.895%2C4%202%2C4.895%202%2C6V18C2%2C19.1045%202.895%2C20%204%2C20H20C21.1045%2C20%2022%2C19.1045%2022%2C18V6C22%2C4.895%2021.1045%2C4%2020%2C4ZM20%2C18H4V6H20V18ZM18%2C16H6V8H18V16Z%22%2F%3E%3Ccircle%20cx%3D%2210%22%20cy%3D%2210%22%20r%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2210%22%20r%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2214%22%20cy%3D%2210%22%20r%3D%221%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-right: 8px;
+.chatbot-button::before { 
+  content: "💬";
+  font-size: 1.1rem;
+  margin-right: 4px; }
 }
 
 .chatbot-button:hover {
