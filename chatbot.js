@@ -95,3 +95,15 @@ document.addEventListener("keypress", function (e) {
     sendMessage();
   }
 });
+
+// Cerrar secciones al hacer clic fuera
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.options-menu')) {
+    document.querySelectorAll('.section-content').forEach(sec => {
+      sec.style.display = 'none';
+    });
+    document.querySelectorAll('.category-btn').forEach(btn => {
+      btn.classList.remove('open');
+    });
+  }
+});
