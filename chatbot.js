@@ -91,7 +91,7 @@ function sendMessage() {
   // Mostrar mensaje de confirmación
   addBotMessage(`✅ ¡Listo! He abierto el Tutor Virtual con tu pregunta: "${message}".`);
 }
-}
+
 
 // Inicializar al cargar
 document.addEventListener("DOMContentLoaded", function () {
