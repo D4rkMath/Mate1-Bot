@@ -82,6 +82,8 @@
   background: #e3f2fd;
   align-self: flex-start;
   border-bottom-left-radius: 4px;
+  color: black; /* 👈 Texto negro */
+  font-weight: 500;
 }
 
 .user-message {
