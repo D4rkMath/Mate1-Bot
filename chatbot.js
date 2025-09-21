@@ -1,25 +1,28 @@
 // chatbot.js
 
 function toggleSection(sectionId) {
-  // Ocultar todas las secciones
-  document.querySelectorAll('.section-content').forEach(sec => {
-    sec.style.display = 'none';
-  });
-
-  // Quitar clase "open" de todos los botones
-  document.querySelectorAll('.category-btn').forEach(btn => {
-    btn.classList.remove('open');
-  });
-
-  // Mostrar solo la sección seleccionada
   const section = document.getElementById(sectionId);
-  if (section) {
-    section.style.display = 'block';
-  }
-
-  // Marcar el botón como abierto
   const button = document.querySelector(`[onclick="toggleSection('${sectionId}')"]`);
-  if (button) {
+
+  // Si la sección está visible, ocúltala
+  if (section.style.display === 'block') {
+    section.style.display = 'none';
+    button.classList.remove('open');
+  } else {
+    // Ocultar todas las demás secciones
+    document.querySelectorAll('.section-content').forEach(sec => {
+      if (sec.id !== sectionId) {
+        sec.style.display = 'none';
+      }
+    });
+
+    // Quitar clase "open" de todos los botones
+    document.querySelectorAll('.category-btn').forEach(btn => {
+      btn.classList.remove('open');
+    });
+
+    // Mostrar solo la sección seleccionada
+    section.style.display = 'block';
     button.classList.add('open');
   }
 }
