@@ -225,3 +225,36 @@
   box-shadow: 0 6px 15px rgba(0, 0, 102, 0.4); /* Sombra más intensa */
   background-color: #0052cc; /* Azul un poco más oscuro */
 }
+
+/* Estilo para la cuadrícula de herramientas */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  gap: 8px; /* Espacio entre botones */
+  padding: 10px 0;
+}
+
+/* Para pantallas más grandes, mostrar 3 columnas */
+@media (min-width: 400px) {
+  .tools-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  }
+}
+
+.tool-btn {
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  background: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tool-btn:hover {
+  background: #0052cc;
+}
