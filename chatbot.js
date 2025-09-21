@@ -69,16 +69,28 @@ function sendMessage() {
   input.value = "";
 
   // Respuestas simples
-  if (message.toLowerCase().includes("hola")) {
-    addBotMessage("¡Hola! Usa los botones para acceder a recursos.");
-  } else if (message.toLowerCase().includes("gracias")) {
-    addBotMessage("¡De nada! Estoy aquí para ayudarte.");
-  } else if (message.toLowerCase().includes("adiós") || message.toLowerCase().includes("salir")) {
-    addBotMessage("¡Hasta luego! Vuelve cuando necesites ayuda.");
-    setTimeout(() => toggleChatbot(), 1500);
-  } else {
-    addBotMessage("Puedes usar los botones de abajo para acceder a materiales o hacerme preguntas simples.");
-  }
+ // if (message.toLowerCase().includes("hola")) {
+ //   addBotMessage("¡Hola! Usa los botones para acceder a recursos.");
+ // } else if (message.toLowerCase().includes("gracias")) {
+ //   addBotMessage("¡De nada! Estoy aquí para ayudarte.");
+ // } else if (message.toLowerCase().includes("adiós") || message.toLowerCase().includes("salir")) {
+ //   addBotMessage("¡Hasta luego! Vuelve cuando necesites ayuda.");
+ //   setTimeout(() => toggleChatbot(), 1500);
+ // } else {
+ //   addBotMessage("Puedes usar los botones de abajo para acceder a materiales o hacerme preguntas simples.");
+   // URL del Tutor Virtual en ChatGPT
+  const tutorUrl = "https://chatgpt.com/g/g-682e08db72c4819197938ac94c4ada63-tutor-virtual-para-el-curso-de-matematica-l";
+
+  // Codificar el mensaje como parámetro de búsqueda
+  const encodedMessage = encodeURIComponent(message);
+  const fullUrl = `${tutorUrl}?q=${encodedMessage}`;
+
+  // Abrir el tutor virtual con el mensaje como prompt
+  window.open(fullUrl, "_blank");
+
+  // Mostrar mensaje de confirmación
+  addBotMessage(`✅ ¡Listo! He abierto el Tutor Virtual con tu pregunta: "${message}".`);
+}
 }
 
 // Inicializar al cargar
