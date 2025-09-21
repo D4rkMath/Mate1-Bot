@@ -143,6 +143,11 @@
   font-size: 0.8rem;
 }
 
+/* Eliminar la flecha solo para el botón "Tutor virtual con IA" */
+.category-btn[onclick*="tutorIA"]::after {
+  content: none;
+}
+
 /* Cuando está abierto, cambia la flecha */
 .category-btn.open::after {
   content: "▲";
