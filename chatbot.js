@@ -73,7 +73,7 @@ function sendMessage() {
 
   // Añadir un parámetro de tiempo único para evitar caché
   const timestamp = new Date().getTime(); // Milisegundos desde 1970
-  const fullUrl = `https://chatgpt.com/g/g-682e08db72c4819197938ac94c4ada63-tutor-virtual-para-el-curso-de-matematica-l/?q=${encodedMessage}&v=${Math.random()}`;
+  const fullUrl = `https://chatgpt.com/?q=${encodedMessage}&v=${Math.random()}`;
 
   // Abrir ChatGPT con el prompt
   window.open(fullUrl, "_blank", "noopener,noreferrer");
