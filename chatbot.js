@@ -71,8 +71,12 @@ function sendMessage() {
   // Codificar solo el mensaje del usuario
   const encodedMessage = encodeURIComponent(userMessage);
 
-  // Abrir ChatGPT con solo el mensaje
-  window.open(`https://chat.openai.com/?q=${encodedMessage}`, "_blank");
+  // Añadir un parámetro de tiempo único para evitar caché
+  const timestamp = new Date().getTime(); // Milisegundos desde 1970
+  const fullUrl = `https://chat.openai.com/?q=${encodedMessage}&t=${timestamp}`;
+
+  // Abrir ChatGPT con el prompt
+  window.open(fullUrl, "_blank");
 
   // Confirmar al usuario
   addBotMessage(`✅ ¡Listo! He enviado tu pregunta a ChatGPT.`);
