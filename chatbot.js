@@ -68,9 +68,6 @@ function sendMessage() {
   addUserMessage(userMessage);
   input.value = "";
 
-  // Contexto predefinido para el tutor
-  const context = "Soy estudiante de Matemática I en la Universidad Científica del Sur. Necesito ayuda con funciones, límites o derivadas.";
-
   // Combinar contexto + mensaje del usuario
   const fullPrompt = userMessage;
 
