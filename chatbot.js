@@ -76,7 +76,7 @@ function sendMessage() {
   const fullUrl = `https://chat.openai.com/?q=${encodedMessage}&v=${Math.random()}`;
 
   // Abrir ChatGPT con el prompt
-  window.open(fullUrl, "_blank");
+  window.open(fullUrl, "_blank", "noopener,noreferrer");
 
   // Confirmar al usuario
   addBotMessage(`✅ ¡Listo! He enviado tu pregunta a ChatGPT.`);
