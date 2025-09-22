@@ -68,14 +68,16 @@ function sendMessage() {
   addUserMessage(userMessage);
   input.value = "";
 
-  // Codificar solo el mensaje del usuario
+  // Codificar el mensaje del usuario
   const encodedMessage = encodeURIComponent(userMessage);
 
-  // Añadir un parámetro de tiempo único para evitar caché
-  const timestamp = new Date().getTime(); // Milisegundos desde 1970
-  const fullUrl = `https://chatgpt.com/?q=${encodedMessage}&v=${Math.random()}`;
+  // Añadir timestamp para evitar caché
+  const timestamp = new Date().getTime();
 
-  // Abrir ChatGPT con el prompt
+  // Usar SOLO el parámetro ?q= (¡no ?prompt=!)
+  const fullUrl = `https://chatgpt.com/?q=${encodedMessage}&t=${timestamp}`;
+
+  // Abrir en nueva pestaña
   window.open(fullUrl, "_blank", "noopener,noreferrer");
 
   // Confirmar al usuario
