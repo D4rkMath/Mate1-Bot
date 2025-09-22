@@ -68,17 +68,14 @@ function sendMessage() {
   addUserMessage(userMessage);
   input.value = "";
 
-  // Combinar contexto + mensaje del usuario
-  const fullPrompt = userMessage;
+  // Codificar solo el mensaje del usuario
+  const encodedMessage = encodeURIComponent(userMessage);
 
-  // Codificar el prompt completo
-  const encodedPrompt = encodeURIComponent(fullPrompt);
-
-  // Abrir ChatGPT con el prompt
-  window.open(`https://chat.openai.com/?q=${encodedPrompt}`, "_blank");
+  // Abrir ChatGPT con solo el mensaje
+  window.open(`https://chat.openai.com/?q=${encodedMessage}`, "_blank");
 
   // Confirmar al usuario
-  addBotMessage(`✅ ¡Listo! He abierto ChatGPT con tu pregunta. El tutor te ayudará.`);
+  addBotMessage(`✅ ¡Listo! He enviado tu pregunta a ChatGPT.`);
 }
 
 // Inicializar al cargar
