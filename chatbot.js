@@ -72,7 +72,7 @@ function sendMessage() {
   const context = "Soy estudiante de Matemática I en la Universidad Científica del Sur. Necesito ayuda con funciones, límites o derivadas.";
 
   // Combinar contexto + mensaje del usuario
-  const fullPrompt = `${context} Pregunta: ${userMessage}`;
+  const fullPrompt = userMessage;
 
   // Codificar el prompt completo
   const encodedPrompt = encodeURIComponent(fullPrompt);
