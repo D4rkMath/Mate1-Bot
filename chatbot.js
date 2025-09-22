@@ -72,7 +72,7 @@ function sendMessage() {
   const encodedMessage = encodeURIComponent(userMessage);
 
   // Abrir ChatGPT con solo el mensaje
-  window.open(`https://chatgpt.com/g/g-682e08db72c4819197938ac94c4ada63-tutor-virtual-para-el-curso-de-matematica-l/?q=${encodedMessage}`, "_blank");
+  window.open(`https://chat.openai.com/?q=${encodedMessage}`, "_blank");
 
   // Confirmar al usuario
   addBotMessage(`✅ ¡Listo! He enviado tu pregunta a ChatGPT.`);
