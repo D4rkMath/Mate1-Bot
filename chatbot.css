@@ -150,8 +150,8 @@
 }
 
 /* Cuando está abierto, cambia la flecha */
-.category-btn.open::after {
-  content: "▲";
+.category-btn[data-no-arrow]::after {
+  content: none;
 }
 
 .option-btn:hover {
