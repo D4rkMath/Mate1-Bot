@@ -73,7 +73,7 @@ function sendMessage() {
 
   // Añadir un parámetro de tiempo único para evitar caché
   const timestamp = new Date().getTime(); // Milisegundos desde 1970
-  const fullUrl = `https://chat.openai.com/?q=${encodedMessage}&t=${timestamp}`;
+  const fullUrl = `https://chat.openai.com/?q=${encodedMessage}&v=${Math.random()}`;
 
   // Abrir ChatGPT con el prompt
   window.open(fullUrl, "_blank");
