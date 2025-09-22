@@ -75,7 +75,7 @@ function sendMessage() {
   const timestamp = new Date().getTime();
 
   // Usar SOLO el parámetro ?q= (¡no ?prompt=!)
-  const fullUrl = `https://chatgpt.com/?q=${encodedMessage}&t=${timestamp}`;
+  const fullUrl = `https://chatgpt.com/?prompt=${encodedMessage}&t=${timestamp}`;
 
   // Abrir en nueva pestaña
   window.open(fullUrl, "_blank", "noopener,noreferrer");
