@@ -62,26 +62,27 @@ function openLink(url) {
 
 function sendMessage() {
   const input = document.getElementById("userInput");
-  const message = input.value.trim();
-  if (!message) return;
+  const userMessage = input.value.trim();
+  if (!userMessage) return;
 
-  addUserMessage(message);
+  addUserMessage(userMessage);
   input.value = "";
 
-  // URL del Tutor Virtual en ChatGPT
-  const tutorUrl = "https://chatgpt.com/g/g-682e08db72c4819197938ac94c4ada63-tutor-virtual-para-el-curso-de-matematica-l";
+  // Contexto predefinido para el tutor
+  const context = "Soy estudiante de Matemática I en la Universidad Científica del Sur. Necesito ayuda con funciones, límites o derivadas.";
 
-  // Codificar el mensaje como parámetro de búsqueda
-  const encodedMessage = encodeURIComponent(message);
-  const fullUrl = `${tutorUrl}?q=${encodedMessage}`;
+  // Combinar contexto + mensaje del usuario
+  const fullPrompt = `${context} Pregunta: ${userMessage}`;
 
-  // Abrir el tutor virtual con el mensaje como prompt
-  window.open(fullUrl, "_blank");
+  // Codificar el prompt completo
+  const encodedPrompt = encodeURIComponent(fullPrompt);
 
-  // Mostrar mensaje de confirmación
-  addBotMessage(`✅ ¡Listo! He abierto el Tutor Virtual con tu pregunta: "${message}".`);
+  // Abrir ChatGPT con el prompt
+  window.open(`https://chat.openai.com/?q=${encodedPrompt}`, "_blank");
+
+  // Confirmar al usuario
+  addBotMessage(`✅ ¡Listo! He abierto ChatGPT con tu pregunta. El tutor te ayudará.`);
 }
-
 
 // Inicializar al cargar
 document.addEventListener("DOMContentLoaded", function () {
