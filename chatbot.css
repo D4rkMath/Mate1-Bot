@@ -331,6 +331,9 @@
   transition: background 0.2s;
   font-weight: bold;
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espacio entre ícono y texto */
  /* text-align: left; /* Alinea el texto a la izquierda */
 }
 
@@ -347,6 +350,7 @@
   top: 50%;
   transform: translateY(-50%);
   font-size: 0.8rem;
+  margin-left: 4px; /* Espacio entre texto y flecha */
 }
 
 /* Eliminar la flecha para botones sin desplegable */
@@ -362,6 +366,7 @@
   background: #f1f1f1;
   border-radius: 8px;
   display: none;
+  max-width: 100%;
 }
 
 /* Botones dentro del desplegable */
