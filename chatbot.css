@@ -336,3 +336,16 @@
 .option-btn:hover {
   background: #0052cc;
 }
+
+/* Desplegable de Documentos - ancho completo */
+.section-content-wide {
+  margin-top: 7px;
+  padding: 7px;
+  border: 1px solid #ddd;
+  background: #f1f1f1;
+  border-radius: 8px;
+  display: none;
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  box-sizing: border-box;
+}
+
