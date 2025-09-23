@@ -23,15 +23,6 @@
   margin-bottom: 10px;
 }
 
-.section-content {
-  margin-top: 10px;
-  padding: 10px 0;
-  border-top: 1px solid #ddd;
-  background: #f1f1f1;
-  border-radius: 8px;
-  max-width: 100%;
-}
-
 .chatbot-container.show {
   display: flex;
 }
@@ -104,59 +95,19 @@
   color: black; /* 👈 Texto negro */
   font-weight: 500;
 }
+
 .options-menu {
   padding: 15px;
   background: #f1f1f1;
   border-top: 1px solid #ddd;
 }
 
-/* Estilo para los botones dentro del desplegable */
-.option-btn {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0;
-  background: #0066ff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: background 0.2s;
-}
-
-.category-btn {
-  display: block;
-  width: 100%;
-  padding: 12px;
-  margin: 5px 0;
-  background: #0066ff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: background 0.2s;
-  font-weight: bold;
-  position: relative;
+/* Aumentar espacio entre secciones */
+.options-menu > .category-btn:not(:first-child) {
+  margin-top: 15px; /* Espacio entre "Herramientas digitales" y "Tutoriales de calculadora" */
 }
 
 .category-btn:hover {
-  background: #0052cc;
-}
-
-/* Flecha para indicar que es desplegable */
-.category-btn::after {
-  content: "▼";
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.8rem;
-}
-
-/* Sección abierta tiene color más claro */
-.category-btn.open {
   background: #0052cc;
 }
 
@@ -168,10 +119,6 @@
 /* Cuando está abierto, cambia la flecha */
 .category-btn[data-no-arrow]::after {
   content: none;
-}
-
-.option-btn:hover {
-  background: #0052cc;
 }
 
 .chat-input {
@@ -334,7 +281,6 @@
   display: flex;
   align-items: center;
   gap: 8px; /* Espacio entre ícono y texto */
- /* text-align: left; /* Alinea el texto a la izquierda */
 }
 
 /* Sección abierta tiene color más oscuro */
@@ -369,7 +315,7 @@
   max-width: 100%;
 }
 
-/* Botones dentro del desplegable */
+/* Estilo para los botones dentro del desplegable */
 .option-btn {
   display: block;
   width: 100%;
