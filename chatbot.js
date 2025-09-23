@@ -98,7 +98,7 @@ function sendMessage() {
 
   // Confirmar al usuario
   addBotMessage(`✅ ¡Listo! He enviado tu pregunta al Tutor virtual.`);
-  },3000); // 3 segundos
+  },5000); // 5 segundos
 }
 
 // Inicializar al cargar
