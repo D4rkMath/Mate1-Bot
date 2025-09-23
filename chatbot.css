@@ -253,6 +253,7 @@
 /* Contenedores de secciones en fila */
 .section-row {
   display: flex;
+  justify-content: space-between; /* Empuja los elementos a los extremos */
   gap: 10px; /* Espacio entre las 2 columnas */
   margin-bottom: 0px; /* Elimina el margen inferior para que el desplegable ocupe todo el espacio */
   flex-wrap: wrap; /* Permite envolver si es necesario */
