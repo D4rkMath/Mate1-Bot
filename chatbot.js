@@ -127,36 +127,15 @@ document.addEventListener("keypress", function (e) {
 // Cerrar todas las secciones al hacer clic en cualquier botón de categoría
 document.addEventListener('click', function(e) {
   if (e.target.classList.contains('category-btn')) {
-    const sectionId = e.target.getAttribute('onclick').match(/toggleSection\('(.+?)'\)/)[1];
-    const section = document.getElementById(sectionId);
-
-    // Cerrar todas las secciones, excepto la que acabas de clickear
+    // Cerrar todas las secciones
     document.querySelectorAll('.section-content, .section-content-wide').forEach(sec => {
-      if (sec.id !== sectionId) {
-        sec.style.display = 'none';
-      }
+      sec.style.display = 'none';
     });
 
-    // Quitar clase "open" de todos los botones, excepto el que acabas de clickear
+    // Quitar clase "open" de todos los botones
     document.querySelectorAll('.category-btn').forEach(btn => {
-      if (btn !== e.target) {
-        btn.classList.remove('open');
-      }
+      btn.classList.remove('open');
     });
-
-    // Abrir la sección que acabas de clickear
-    if (section.style.display === 'block') {
-      section.style.display = 'none';
-      e.target.classList.remove('open');
-    } else {
-      section.style.display = 'block';
-      e.target.classList.add('open');
-
-      // Cargar los tutoriales si es la primera vez
-      if (sectionId === 'tutoriales' && !section.innerHTML.trim()) {
-        loadTutoriales();
-      }
-    }
   }
 });
 
