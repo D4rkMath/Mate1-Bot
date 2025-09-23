@@ -122,9 +122,11 @@ document.addEventListener("keypress", function (e) {
 // Cerrar secciones al hacer clic fuera
 document.addEventListener('click', function(e) {
   if (!e.target.closest('.options-menu')) {
-    document.querySelectorAll('.section-content').forEach(sec => {
+     // Cerrar todos los desplegables
+    document.querySelectorAll('.section-content, .section-content-wide').forEach(sec => {
       sec.style.display = 'none';
     });
+      // Quitar clase "open" de todos los botones
     document.querySelectorAll('.category-btn').forEach(btn => {
       btn.classList.remove('open');
     });
