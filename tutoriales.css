@@ -1,0 +1,129 @@
+/* Contenedor de tutoriales */
+.tutorial-container {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+}
+
+/* Columna izquierda: Menú de títulos */
+.tutorial-menu {
+  flex: 0 0 200px; /* Ancho fijo */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tutorial-item {
+  width: 100%;
+  padding: 10px;
+  background: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+  text-align: left;
+}
+
+.tutorial-item:hover {
+  background: #0052cc;
+}
+
+.tutorial-item.active {
+  background: #0052cc;
+}
+
+/* Columna derecha: Carrusel de videos */
+.video-carousel {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #f1f1f1;
+  padding: 15px;
+}
+
+.carousel-inner {
+  display: flex;
+  gap: 15px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.carousel-item {
+  min-width: 300px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.carousel-item h4 {
+  font-size: 0.9rem;
+  margin: 0 0 10px 0;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.carousel-item a {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  background: #0066ff;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: background 0.2s;
+}
+
+.carousel-item a:hover {
+  background: #0052cc;
+}
+
+/* Flechas del carrusel */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.carousel-arrow:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+.carousel-arrow.left {
+  left: 10px;
+}
+
+.carousel-arrow.right {
+  right: 10px;
+}
