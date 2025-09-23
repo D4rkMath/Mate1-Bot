@@ -251,8 +251,8 @@
 /* Contenedores de secciones en fila */
 .section-row {
   display: flex;
-  gap: 10px; /* Espacio entre secciones */
-  margin-bottom: 15px;
+  gap: 7px; /* Espacio entre secciones */
+  margin-bottom: 7px;
   flex-wrap: wrap; /* Permite envolver si es necesario */
 }
 
