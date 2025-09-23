@@ -97,14 +97,14 @@
 }
 
 .options-menu {
-  padding: 10px;
+  padding: 7px;
   background: #f1f1f1;
   border-top: 1px solid #ddd;
 }
 
 /* Aumentar espacio entre secciones */
 .options-menu > .category-btn:not(:first-child) {
-  margin-top: 10px; /* Espacio entre "Herramientas digitales" y "Tutoriales de calculadora" */
+  margin-top: 7px; /* Espacio entre "Herramientas digitales" y "Tutoriales de calculadora" */
 }
 
 .category-btn:hover {
