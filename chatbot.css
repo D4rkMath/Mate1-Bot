@@ -16,10 +16,20 @@
   transition: all 0.3s ease;
 }
 
+/* Grupo de secciones */
+.section-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
 .section-content {
   margin-top: 10px;
   padding: 10px 0;
   border-top: 1px solid #ddd;
+  background: #f1f1f1;
+  border-radius: 8px;
+  max-width: 100%;
 }
 
 .chatbot-container.show {
@@ -100,6 +110,7 @@
   border-top: 1px solid #ddd;
 }
 
+/* Estilo para los botones dentro del desplegable */
 .option-btn {
   display: block;
   width: 100%;
@@ -142,6 +153,11 @@
   top: 50%;
   transform: translateY(-50%);
   font-size: 0.8rem;
+}
+
+/* Sección abierta tiene color más claro */
+.category-btn.open {
+  background: #0052cc;
 }
 
 /* Eliminar la flecha solo para el botón "Tutor virtual con IA" */
@@ -284,3 +300,4 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
