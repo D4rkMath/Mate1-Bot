@@ -202,7 +202,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columnas */
   gap: 8px; /* Espacio entre botones */
-  padding: 7px 0;
+  padding: 2px 0;
   width:100%; /* Ancho completo de la fila */
   box-sizing:border-box; /* Incluye padding en el ancho */
 }
