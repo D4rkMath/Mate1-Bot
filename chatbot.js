@@ -24,6 +24,11 @@ function toggleSection(sectionId) {
     // Mostrar solo la sección seleccionada
     section.style.display = 'block';
     button.classList.add('open');
+
+    // Cargar los tutoriales si es la primera vez
+    if (sectionId === 'tutoriales' && !section.innerHTML.trim()) {
+      loadTutoriales();
+    }
   }
 }
 
@@ -132,3 +137,24 @@ document.addEventListener('click', function(e) {
     });
   }
 });
+
+// Función para cargar los tutoriales dinámicamente
+function loadTutoriales() {
+  fetch('tutoriales.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('tutoriales').innerHTML = html;
+    })
+    .catch(err => console.error("Error cargando tutoriales.html:", err));
+
+  // Cargar estilos
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'tutoriales.css';
+  document.head.appendChild(link);
+
+  // Cargar script
+  const script = document.createElement('script');
+  script.src = 'tutoriales.js';
+  document.body.appendChild(script);
+}
