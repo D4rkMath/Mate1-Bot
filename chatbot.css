@@ -331,7 +331,7 @@
   transition: background 0.2s;
   font-weight: bold;
   position: relative;
-  text-align: left; /* Alinea el texto a la izquierda */
+ /* text-align: left; /* Alinea el texto a la izquierda */
 }
 
 /* Sección abierta tiene color más oscuro */
