@@ -313,6 +313,7 @@
   border-radius: 8px;
   display: none;
   max-width: 100%;
+  overflow:hidden; /* Evita que el contenido se desborde */
 }
 
 /* Estilo para los botones dentro del desplegable */
