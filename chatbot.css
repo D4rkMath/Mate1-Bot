@@ -301,16 +301,18 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Contenedor de secciones en fila */
+/* Contenedores de secciones en fila */
 .section-row {
   display: flex;
   gap: 10px; /* Espacio entre secciones */
   margin-bottom: 15px;
+  flex-wrap: wrap; /* Permite envolver si es necesario */
 }
 
 /* Cada sección en la fila */
 .section-item {
   flex: 1; /* Ocupa el mismo espacio */
+  min-width: 150px; /* Mínimo ancho */
   display: flex;
   flex-direction: column;
 }
@@ -329,6 +331,7 @@
   transition: background 0.2s;
   font-weight: bold;
   position: relative;
+  text-align: left; /* Alinea el texto a la izquierda */
 }
 
 /* Sección abierta tiene color más oscuro */
