@@ -200,9 +200,11 @@
 /* Estilo para la cuadrícula de herramientas */
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
   gap: 8px; /* Espacio entre botones */
   padding: 7px 0;
+  width:100%; /* Ancho completo de la fila */
+  box-sizing:border-box; /* Incluye padding en el ancho */
 }
 
 /* Para pantallas más grandes, mostrar 3 columnas */
@@ -306,7 +308,7 @@
 
 /* Contenido de la sección (desplegable) */
 .section-content {
-  margin-top: 10px;
+  margin-top: 7px;
   padding: 7px;
   border: 1px solid #ddd;
   background: #f1f1f1;
