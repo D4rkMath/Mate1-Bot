@@ -68,17 +68,16 @@ function sendMessage() {
   addUserMessage(userMessage);
   input.value = "";
 
-   // Mostrar mensaje de espera
+   // Mostrar mensaje de espera + spinner
   addBotMessage(`
     Enviando tu pregunta al Tutor virtual del curso...
     <div class="loading-spinner"></div>
   `);
 
-  // Esperar 1 segundo antes de redirigir
+  // Esperar 3 segundos antes de redirigir
   setTimeout(() => {
   // Codificar el mensaje del usuario
   const encodedMessage = encodeURIComponent(userMessage);
-
   // Añadir timestamp para evitar caché
   const timestamp = new Date().getTime();
 
@@ -88,9 +87,18 @@ function sendMessage() {
   // Abrir en nueva pestaña
   window.open(fullUrl, "_blank", "noopener,noreferrer");
 
+  // 👇 Aquí eliminamos el spinner del DOM
+    const lastMessage = document.querySelector(".message.bot-message:last-child");
+    if (lastMessage) {
+      const spinner = lastMessage.querySelector(".loading-spinner");
+      if (spinner) {
+        spinner.remove(); // Elimina el spinner
+      }
+    }
+
   // Confirmar al usuario
   addBotMessage(`✅ ¡Listo! He enviado tu pregunta al Tutor virtual.`);
-  },1000);
+  },3000); // 3 segundos
 }
 
 // Inicializar al cargar
