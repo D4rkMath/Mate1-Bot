@@ -301,3 +301,81 @@
   100% { transform: rotate(360deg); }
 }
 
+/* Contenedor de secciones en fila */
+.section-row {
+  display: flex;
+  gap: 10px; /* Espacio entre secciones */
+  margin-bottom: 15px;
+}
+
+/* Cada sección en la fila */
+.section-item {
+  flex: 1; /* Ocupa el mismo espacio */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Botones de categoría */
+.category-btn {
+  width: 100%;
+  padding: 12px;
+  margin: 0; /* Sin margen vertical */
+  background: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+  font-weight: bold;
+  position: relative;
+}
+
+/* Sección abierta tiene color más oscuro */
+.category-btn.open {
+  background: #0052cc;
+}
+
+/* Flecha para indicar que es desplegable */
+.category-btn::after {
+  content: "▼";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+}
+
+/* Eliminar la flecha para botones sin desplegable */
+.category-btn[data-no-arrow]::after {
+  content: none;
+}
+
+/* Contenido de la sección (desplegable) */
+.section-content {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #f1f1f1;
+  border-radius: 8px;
+  display: none;
+}
+
+/* Botones dentro del desplegable */
+.option-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  background: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.option-btn:hover {
+  background: #0052cc;
+}
