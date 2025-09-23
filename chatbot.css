@@ -260,7 +260,7 @@
 
 /* Cada sección en la fila */
 .section-item {
-  flex: 1; /* Ocupa el mismo espacio */
+/*  flex: 1; /* Ocupa el mismo espacio */
   min-width: 150px; /* Mínimo ancho */
   display: flex;
   flex-direction: column;
