@@ -68,6 +68,14 @@ function sendMessage() {
   addUserMessage(userMessage);
   input.value = "";
 
+   // Mostrar mensaje de espera
+  addBotMessage(`
+    Enviando tu pregunta al Tutor virtual del curso...
+    <div class="loading-spinner"></div>
+  `);
+
+  // Esperar 1 segundo antes de redirigir
+  setTimeout(() => {
   // Codificar el mensaje del usuario
   const encodedMessage = encodeURIComponent(userMessage);
 
@@ -81,7 +89,8 @@ function sendMessage() {
   window.open(fullUrl, "_blank", "noopener,noreferrer");
 
   // Confirmar al usuario
-  addBotMessage(`✅ ¡Listo! He enviado tu pregunta a ChatGPT.`);
+  addBotMessage(`✅ ¡Listo! He enviado tu pregunta al Tutor virtual.`);
+  },1000);
 }
 
 // Inicializar al cargar
