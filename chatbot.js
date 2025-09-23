@@ -124,15 +124,14 @@ document.addEventListener("keypress", function (e) {
   }
 });
 
-// Cerrar todas las secciones al hacer clic en cualquier botón de categoría
+// Cerrar secciones al hacer clic fuera
 document.addEventListener('click', function(e) {
-  if (e.target.classList.contains('category-btn')) {
-    // Cerrar todas las secciones
+  if (!e.target.closest('.options-menu')) {
+     // Cerrar todos los desplegables
     document.querySelectorAll('.section-content, .section-content-wide').forEach(sec => {
       sec.style.display = 'none';
     });
-
-    // Quitar clase "open" de todos los botones
+      // Quitar clase "open" de todos los botones
     document.querySelectorAll('.category-btn').forEach(btn => {
       btn.classList.remove('open');
     });
