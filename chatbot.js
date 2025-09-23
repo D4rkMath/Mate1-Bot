@@ -70,7 +70,7 @@ function sendMessage() {
 
    // Mostrar mensaje de espera + spinner
   addBotMessage(`
-    Enviando tu pregunta al Tutor virtual del curso...
+    Enviando tu pregunta al Tutor virtual ...
     <div class="loading-spinner"></div>
   `);
 
@@ -97,8 +97,8 @@ function sendMessage() {
     }
 
   // Confirmar al usuario
-  addBotMessage(`✅ ¡Listo! He enviado tu pregunta al Tutor virtual.`);
-  },5000); // 5 segundos
+ // addBotMessage(`✅ ¡Listo! He enviado tu pregunta al Tutor virtual.`);
+  },4000); // 4 segundos
 }
 
 // Inicializar al cargar
