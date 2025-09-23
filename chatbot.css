@@ -20,7 +20,7 @@
 .section-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 7px;
 }
 
 .chatbot-container.show {
@@ -97,7 +97,7 @@
 }
 
 .options-menu {
-  padding: 7px;
+  padding: 5px;
   background: #f1f1f1;
   border-top: 1px solid #ddd;
 }
@@ -202,7 +202,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columnas */
   gap: 8px; /* Espacio entre botones */
-  padding: 10px 0;
+  padding: 7px 0;
 }
 
 /* Para pantallas más grandes, mostrar 3 columnas */
@@ -307,7 +307,7 @@
 /* Contenido de la sección (desplegable) */
 .section-content {
   margin-top: 10px;
-  padding: 10px;
+  padding: 7px;
   border: 1px solid #ddd;
   background: #f1f1f1;
   border-radius: 8px;
@@ -319,7 +319,7 @@
 .option-btn {
   display: block;
   width: 100%;
-  padding: 10px;
+  padding: 7px;
   margin: 5px 0;
   background: #0066ff;
   color: white;
