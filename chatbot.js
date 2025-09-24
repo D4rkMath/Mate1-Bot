@@ -140,44 +140,40 @@ document.addEventListener('click', function(e) {
 
 // Función para cargar los tutoriales dinámicamente
 function loadTutoriales() {
-  // Verificar si ya se cargó el contenido
-  if (document.getElementById('tutoriales').innerHTML.trim() !== '') {
-    return; // Ya se cargó
-  }
+  const container = document.getElementById('tutoriales');
+  
+  // Evitar cargar múltiples veces
+  if (container.dataset.loaded) return;
+  
+  container.innerHTML = '<p style="text-align:center;padding:15px;color:#666;">Cargando tutoriales...</p>';
 
-  // Mostrar mensaje de carga
-  document.getElementById('tutoriales').innerHTML = '<p style="text-align: center; padding: 20px;">Cargando tutoriales...</p>';
-
-  // Cargar HTML
   fetch('tutoriales.html')
     .then(response => {
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      if (!response.ok) throw new Error('Archivo tutoriales.html no encontrado');
       return response.text();
     })
     .then(html => {
-      document.getElementById('tutoriales').innerHTML = html;
+      container.innerHTML = html;
 
-      // Cargar CSS
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = 'tutoriales.css';
-      document.head.appendChild(link);
+      // Añadir CSS
+      const style = document.createElement('link');
+      style.rel = 'stylesheet';
+      style.href = 'tutoriales.css';
+      document.head.appendChild(style);
 
-      // Cargar JS
+      // Añadir JS
       const script = document.createElement('script');
       script.src = 'tutoriales.js';
-      script.onload = function() {
-        console.log("Tutoriales cargados correctamente.");
+      script.onload = () => {
+        container.dataset.loaded = 'true'; // Marcar como cargado
       };
-      script.onerror = function() {
-        document.getElementById('tutoriales').innerHTML = '<p style="color: red; text-align: center; padding: 20px;">Error al cargar los tutoriales. Por favor, recarga la página.</p>';
-        console.error("Error al cargar tutoriales.js");
+      script.onerror = () => {
+        container.innerHTML = '<p style="color:red;text-align:center;">Error al cargar los tutoriales.</p>';
       };
       document.body.appendChild(script);
-
     })
     .catch(err => {
-      document.getElementById('tutoriales').innerHTML = `<p style="color: red; text-align: center; padding: 20px;">Error: ${err.message}</p>`;
-      console.error("Error cargando tutoriales.html:", err);
+      console.error('Error:', err);
+      container.innerHTML = `<p style="color:red;text-align:center;">${err.message}</p>`;
     });
 }
