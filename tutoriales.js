@@ -1,37 +1,51 @@
 // tutoriales.js
 
-// 🎥 Datos reales de videos de YouTube (reemplaza VIDEO_ID con IDs reales)
-const tutorialData = {
-  tabular: [
-    { title: "Tabular funciones en calculadora Casio", videoId: "ABC123xyz" },
-    { title: "Cómo hacer tablas de valores en TI-84", videoId: "DEF456uvw" }
-  ],
-  "dar-valores": [
-    { title: "Evaluar funciones en x = a", videoId: "GHI789rst" },
-    { title: "Sustituir valores en expresiones", videoId: "JKL012mno" }
-  ],
-  "resolver-ecuaciones": [
-    { title: "Resolver ecuaciones con solve()", videoId: "MNO345pqr" },
-    { title: "Ecuaciones cuadráticas paso a paso", videoId: "STU678vwx" }
-  ],
-  limites: [
-    { title: "Calcular límites en calculadora", videoId: "VWX901yzA" },
-    { title: "Límites laterales en TI-Nspire", videoId: "YZA234bcd" }
-  ],
-  derivadas: [
-    { title: "Derivadas con d/dx en Casio", videoId: "BCD567efg" },
-    { title: "Encontrar derivadas en TI-84", videoId: "EFG890hij" }
-  ]
-};
+let tutorialData = {}; // Almacenará los datos del Excel
 
-// Genera la URL de miniatura de YouTube
-function getThumbnailUrl(videoId) {
-  return `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`;
+// Función para cargar el archivo Excel
+async function loadExcelData() {
+  try {
+    const response = await fetch('Videos_youtube.xlsx');
+    const arrayBuffer = await response.arrayBuffer();
+    const workbook = XLSX.read(arrayBuffer, { type: 'array' });
+
+    // Leer la primera hoja
+    const sheetName = workbook.SheetNames[0];
+    const worksheet = workbook.Sheets[sheetName];
+
+    // Convertir a JSON
+    const jsonData = XLSX.utils.sheet_to_json(worksheet);
+
+    // Organizar los datos por tema
+    tutorialData = {};
+    jsonData.forEach(row => {
+      const tema = row.TEMAS; // Primera columna
+      const videoLink = row.LINKS; // Tercera columna
+      const titulo = row.MODELO; // Cuarta columna
+
+      if (!tutorialData[tema]) {
+        tutorialData[tema] = [];
+      }
+
+      tutorialData[tema].push({
+        title: titulo,
+        videoId: getVideoIdFromUrl(videoLink) // Extraer el ID del video
+      });
+    });
+
+    // Renderizar los videos iniciales
+    renderVideos('tabular'); // Por defecto, carga "Tabular"
+
+  } catch (error) {
+    console.error("Error cargando el archivo Excel:", error);
+    document.querySelector('.carousel-inner').innerHTML = '<p class="carousel-placeholder">No se pudo cargar el archivo de videos.</p>';
+  }
 }
 
-// Genera el enlace de YouTube
-function getVideoUrl(videoId) {
-  return `https://www.youtube.com/watch?v=${videoId}`;
+// Extrae el ID del video de YouTube
+function getVideoIdFromUrl(url) {
+  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.*?v=))([^"&?\/\s]{11})/);
+  return match ? match[1] : '';
 }
 
 // Renderiza los videos en el carrusel
@@ -46,7 +60,6 @@ function renderVideos(category) {
 
   container.innerHTML = videos.map(video => `
     <div class="carousel-item">
-      <!-- Miniatura + iframe embebido -->
       <div class="video-embed-container">
         <iframe 
           src="https://www.youtube.com/embed/${video.videoId}?autoplay=0&rel=0&showinfo=0&modestbranding=1"
@@ -93,5 +106,5 @@ document.addEventListener('click', function(e) {
 
 // Inicializa al cargar
 document.addEventListener('DOMContentLoaded', function() {
-  renderVideos('tabular'); // Carga la primera categoría por defecto
+  loadExcelData(); // Carga el Excel al abrir la página
 });
