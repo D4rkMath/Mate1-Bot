@@ -140,21 +140,44 @@ document.addEventListener('click', function(e) {
 
 // Función para cargar los tutoriales dinámicamente
 function loadTutoriales() {
+  // Verificar si ya se cargó el contenido
+  if (document.getElementById('tutoriales').innerHTML.trim() !== '') {
+    return; // Ya se cargó
+  }
+
+  // Mostrar mensaje de carga
+  document.getElementById('tutoriales').innerHTML = '<p style="text-align: center; padding: 20px;">Cargando tutoriales...</p>';
+
+  // Cargar HTML
   fetch('tutoriales.html')
-    .then(response => response.text())
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return response.text();
+    })
     .then(html => {
       document.getElementById('tutoriales').innerHTML = html;
+
+      // Cargar CSS
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'tutoriales.css';
+      document.head.appendChild(link);
+
+      // Cargar JS
+      const script = document.createElement('script');
+      script.src = 'tutoriales.js';
+      script.onload = function() {
+        console.log("Tutoriales cargados correctamente.");
+      };
+      script.onerror = function() {
+        document.getElementById('tutoriales').innerHTML = '<p style="color: red; text-align: center; padding: 20px;">Error al cargar los tutoriales. Por favor, recarga la página.</p>';
+        console.error("Error al cargar tutoriales.js");
+      };
+      document.body.appendChild(script);
+
     })
-    .catch(err => console.error("Error cargando tutoriales.html:", err));
-
-  // Cargar estilos
-  const link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = 'tutoriales.css';
-  document.head.appendChild(link);
-
-  // Cargar script
-  const script = document.createElement('script');
-  script.src = 'tutoriales.js';
-  document.body.appendChild(script);
+    .catch(err => {
+      document.getElementById('tutoriales').innerHTML = `<p style="color: red; text-align: center; padding: 20px;">Error: ${err.message}</p>`;
+      console.error("Error cargando tutoriales.html:", err);
+    });
 }
