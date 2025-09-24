@@ -75,7 +75,7 @@ function sendMessage() {
 
    // Mostrar mensaje de espera + spinner
   addBotMessage(`
-    Enviando tu pregunta al Tutor virtual ...
+    Enviando tu pregunta al Tutor virtual ... 
     <div class="loading-spinner"></div>
   `);
 
