@@ -46,9 +46,17 @@ function renderVideos(category) {
 
   container.innerHTML = videos.map(video => `
     <div class="carousel-item">
-      <img src="${getThumbnailUrl(video.videoId)}" 
-           alt="${video.title}" 
-           onclick="window.open('${getVideoUrl(video.videoId)}', '_blank')">
+      <!-- Miniatura + iframe embebido -->
+      <div class="video-embed-container">
+        <iframe 
+          src="https://www.youtube.com/embed/${video.videoId}?autoplay=0&rel=0&showinfo=0&modestbranding=1"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          title="${video.title}"
+          class="youtube-embed">
+        </iframe>
+      </div>
       <h4>${video.title}</h4>
     </div>
   `).join('');
