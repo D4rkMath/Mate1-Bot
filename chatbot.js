@@ -9,8 +9,8 @@ function toggleSection(sectionId) {
     section.style.display = 'none';
     button.classList.remove('open');
   } else {
-    // Ocultar todas las demás secciones
-    document.querySelectorAll('.section-content').forEach(sec => {
+    // Ocultar todas las demás secciones (incluyendo .section-content-wide)
+    document.querySelectorAll('.section-content, .section-content-wide').forEach(sec => {
       if (sec.id !== sectionId) {
         sec.style.display = 'none';
       }
