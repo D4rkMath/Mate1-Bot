@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(err => console.error("Error cargando chatbot.html:", err));
 });
 
-// Enviar con Enter
+// Enviar con Enter 
 document.addEventListener("keypress", function (e) {
   if (e.key === "Enter" && e.target.id === "userInput") {
     sendMessage();
