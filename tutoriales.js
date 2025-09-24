@@ -1,85 +1,89 @@
 // tutoriales.js
 
-// Datos de los videos (puedes agregar más)
-const tutorialVideos = {
+// 🎥 Datos reales de videos de YouTube (reemplaza VIDEO_ID con IDs reales)
+const tutorialData = {
   tabular: [
-    { title: "Cómo tabular funciones", thumbnail: "https://i.ytimg.com/vi/VIDEO_ID_1/hqdefault.jpg", url: "https://www.youtube.com/watch?v=VIDEO_ID_1" },
-    { title: "Tabulación paso a paso", thumbnail: "https://i.ytimg.com/vi/VIDEO_ID_2/hqdefault.jpg", url: "https://www.youtube.com/watch?v=VIDEO_ID_2" }
+    { title: "Tabular funciones en calculadora Casio", videoId: "ABC123xyz" },
+    { title: "Cómo hacer tablas de valores en TI-84", videoId: "DEF456uvw" }
   ],
-  dar-valores: [
-    { title: "Dar valores a funciones", thumbnail: "https://i.ytimg.com/vi/VIDEO_ID_3/hqdefault.jpg", url: "https://www.youtube.com/watch?v=VIDEO_ID_3" },
-    { title: "Ejercicios de evaluación", thumbnail: "https://i.ytimg.com/vi/VIDEO_ID_4/hqdefault.jpg", url: "https://www.youtube.com/watch?v=VIDEO_ID_4" }
+  "dar-valores": [
+    { title: "Evaluar funciones en x = a", videoId: "GHI789rst" },
+    { title: "Sustituir valores en expresiones", videoId: "JKL012mno" }
   ],
-  resolver-ecuaciones: [
-    { title: "Resolver ecuaciones paso a paso", thumbnail: "https://i.ytimg.com/vi/VIDEO_ID_5/hqdefault.jpg", url: "https://www.youtube.com/watch?v=VIDEO_ID_5" },
-    { title: "Métodos de resolución", thumbnail: "https://i.ytimg.com/vi/VIDEO_ID_6/hqdefault.jpg", url: "https://www.youtube.com/watch?v=VIDEO_ID_6" }
+  "resolver-ecuaciones": [
+    { title: "Resolver ecuaciones con solve()", videoId: "MNO345pqr" },
+    { title: "Ecuaciones cuadráticas paso a paso", videoId: "STU678vwx" }
   ],
   limites: [
-    { title: "Introducción a límites", thumbnail: "https://i.ytimg.com/vi/VIDEO_ID_7/hqdefault.jpg", url: "https://www.youtube.com/watch?v=VIDEO_ID_7" },
-    { title: "Límites indeterminados", thumbnail: "https://i.ytimg.com/vi/VIDEO_ID_8/hqdefault.jpg", url: "https://www.youtube.com/watch?v=VIDEO_ID_8" }
+    { title: "Calcular límites en calculadora", videoId: "VWX901yzA" },
+    { title: "Límites laterales en TI-Nspire", videoId: "YZA234bcd" }
   ],
   derivadas: [
-    { title: "Reglas básicas de derivadas", thumbnail: "https://i.ytimg.com/vi/VIDEO_ID_9/hqdefault.jpg", url: "https://www.youtube.com/watch?v=VIDEO_ID_9" },
-    { title: "Derivadas aplicadas", thumbnail: "https://i.ytimg.com/vi/VIDEO_ID_10/hqdefault.jpg", url: "https://www.youtube.com/watch?v=VIDEO_ID_10" }
+    { title: "Derivadas con d/dx en Casio", videoId: "BCD567efg" },
+    { title: "Encontrar derivadas en TI-84", videoId: "EFG890hij" }
   ]
 };
 
-// Función para cargar los videos en el carrusel
-function loadVideos(category) {
-  const carouselInner = document.querySelector('.carousel-inner');
-  carouselInner.innerHTML = '';
-
-  const videos = tutorialVideos[category] || [];
-
-  videos.forEach(video => {
-    const item = document.createElement('div');
-    item.className = 'carousel-item';
-    item.innerHTML = `
-      <img src="${video.thumbnail}" alt="${video.title}">
-      <h4>${video.title}</h4>
-      <a href="${video.url}" target="_blank">Ver en YouTube</a>
-    `;
-    carouselInner.appendChild(item);
-  });
-
-  // Si no hay videos, mostrar mensaje
-  if (videos.length === 0) {
-    carouselInner.innerHTML = '<p>No hay videos disponibles para esta categoría.</p>';
-  }
+// Genera la URL de miniatura de YouTube
+function getThumbnailUrl(videoId) {
+  return `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`;
 }
 
-// Función para manejar el clic en los títulos
+// Genera el enlace de YouTube
+function getVideoUrl(videoId) {
+  return `https://www.youtube.com/watch?v=${videoId}`;
+}
+
+// Renderiza los videos en el carrusel
+function renderVideos(category) {
+  const container = document.querySelector('.carousel-inner');
+  const videos = tutorialData[category] || [];
+
+  if (videos.length === 0) {
+    container.innerHTML = '<p class="carousel-placeholder">No hay tutoriales disponibles para esta categoría.</p>';
+    return;
+  }
+
+  container.innerHTML = videos.map(video => `
+    <div class="carousel-item">
+      <img src="${getThumbnailUrl(video.videoId)}" 
+           alt="${video.title}" 
+           onclick="window.open('${getVideoUrl(video.videoId)}', '_blank')">
+      <h4>${video.title}</h4>
+    </div>
+  `).join('');
+}
+
+// Maneja clics en el menú
 document.addEventListener('click', function(e) {
   if (e.target.classList.contains('tutorial-item')) {
-    // Remover clase 'active' de todos los elementos
-    document.querySelectorAll('.tutorial-item').forEach(item => {
-      item.classList.remove('active');
+    // Actualiza clase activa
+    document.querySelectorAll('.tutorial-item').forEach(btn => {
+      btn.classList.remove('active');
     });
-
-    // Añadir clase 'active' al elemento clickeado
     e.target.classList.add('active');
 
-    // Cargar los videos correspondientes
+    // Carga los videos
     const category = e.target.dataset.category;
-    loadVideos(category);
+    renderVideos(category);
   }
 });
 
-// Función para navegar en el carrusel
+// Maneja flechas del carrusel
 document.addEventListener('click', function(e) {
   if (e.target.classList.contains('carousel-arrow')) {
-    const carousel = document.querySelector('.carousel-inner');
-    const scrollAmount = 300; // Puedes ajustar este valor
+    const container = document.querySelector('.carousel-inner');
+    const scrollAmount = 295; // ancho de un item + gap
 
     if (e.target.classList.contains('left')) {
-      carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     } else {
-      carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   }
 });
 
-// Cargar videos por defecto al abrir la sección
+// Inicializa al cargar
 document.addEventListener('DOMContentLoaded', function() {
-  loadVideos('tabular'); // Por defecto, carga los videos de "Tabular"
+  renderVideos('tabular'); // Carga la primera categoría por defecto
 });
