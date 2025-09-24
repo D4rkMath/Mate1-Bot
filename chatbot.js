@@ -25,9 +25,9 @@ function toggleSection(sectionId) {
     section.style.display = 'block';
     button.classList.add('open');
 
-    // Cargar los tutoriales si es la primera vez
-    if (sectionId === 'tutoriales' && !section.innerHTML.trim()) {
-      loadTutoriales();
+    // Cargar los tutoriales cada vez que se abre la sección
+if (sectionId === 'tutoriales') {
+  loadTutoriales();
     }
   }
 }
