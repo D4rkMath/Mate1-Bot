@@ -119,12 +119,11 @@
 .video-embed-container {
   position: relative;
   width: 100%;
-  max-width: 330px; /* Limita el ancho máximo del video para que no sea enorme */
-  padding-bottom: 56.25%; /* Aspect ratio 16:9 */
-  height: 543px; /* Fija la altura como en el ejemplo */
+  padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+  height: 0;
   overflow: hidden;
-  margin: 0 auto; /* Centra el video */
 }
+
 /* Estilo del iframe */
 .youtube-embed {
   position: absolute;
