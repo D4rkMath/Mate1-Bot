@@ -60,7 +60,19 @@ function renderVideos() {
       new YT.Player(`youtube-video-${index}`, {
         events: {
           'onReady': (event) => {
-            event.target.setVolume(50);
+            event.target.setVolume(50); // Establece el volumen inicial
+          },
+          'onStateChange': (event) => {
+            // Ocultar flechas cuando el video empieza a reproducirse
+            const leftArrow = document.querySelector('.carousel-arrow.left');
+            const rightArrow = document.querySelector('.carousel-arrow.right');
+            if (event.data === YT.PlayerState.PLAYING) {
+              leftArrow.style.display = 'none';
+              rightArrow.style.display = 'none';
+            } else {
+              leftArrow.style.display = 'flex';
+              rightArrow.style.display = 'flex';
+            }
           }
         }
       });
