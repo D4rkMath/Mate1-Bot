@@ -78,10 +78,15 @@
   font-weight: 600;
   color: #333;
 }
+/* Flechas de navegación (ahora en la parte inferior) */
+.carousel-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
 .carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   background: rgba(0, 102, 255, 0.8);
   color: white;
   border: none;
@@ -96,14 +101,9 @@
   justify-content: center;
   transition: background 0.2s;
 }
+
 .carousel-arrow:hover {
   background: rgba(0, 82, 204, 0.9);
-}
-.carousel-arrow.left {
-  left: 5px;
-}
-.carousel-arrow.right {
-  right: 5px;
 }
 /* Mensaje cuando no hay videos */
 .carousel-placeholder {
