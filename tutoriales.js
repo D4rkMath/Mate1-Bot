@@ -1,67 +1,67 @@
 // tutoriales.js
 
-console.log("Tutoriales cargados");
+// ✅ Datos de videos integrados directamente (sin JSON externo)
+const videosData = [
+  {
+    title: "Tabular: FX-991LA CW",
+    embedUrl: "https://www.youtube.com/embed/5Boyptd7wY8"
+  },
+  {
+    title: "Tabular: FX-82MS",
+    embedUrl: "https://www.youtube.com/embed/9i-y5DV-f3E"
+  },
+  {
+    title: "Ecuaciones: FX-82MS",
+    embedUrl: "https://www.youtube.com/embed/_ztzuv_hUEc"
+  },
+  {
+    title: "Límites: FX-991CW",
+    embedUrl: "https://www.youtube.com/embed/2DgH4wlJ-iA"
+  }
+];
 
-const carouselInner = document.querySelector('.carousel-inner');
-const leftArrow = document.querySelector('.carousel-arrow.left');
-const rightArrow = document.querySelector('.carousel-arrow.right');
+// Renderiza los videos en el carrusel
+function renderVideos() {
+  const carouselInner = document.querySelector('.carousel-inner');
+  const itemWidth = 280 + 15; // Ancho + gap
 
-// Ancho de un item + gap
-const itemWidth = 280 + 15;
+  // Limpiar contenedor
+  carouselInner.innerHTML = '';
 
-// Función para cargar los videos
-function loadVideos() {
-  fetch('videos.json')
-    .then(response => {
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      return response.json();
-    })
-    .then(data => {
-      if (data.length === 0) {
-        carouselInner.innerHTML = '<div class="carousel-placeholder">No hay videos disponibles.</div>';
-        return;
-      }
+  // Crear items
+  videosData.forEach(video => {
+    const item = document.createElement('div');
+    item.classList.add('carousel-item');
+    item.innerHTML = `
+      <div class="video-embed-container">
+        <iframe 
+          src="${video.embedUrl}" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen 
+          title="${video.title}"
+          class="youtube-embed">
+        </iframe>
+      </div>
+      <h4>${video.title}</h4>
+    `;
+    carouselInner.appendChild(item);
+  });
 
-      // Limpiar el carrusel
-      carouselInner.innerHTML = '';
+  // Flechas de navegación
+  const leftArrow = document.querySelector('.carousel-arrow.left');
+  const rightArrow = document.querySelector('.carousel-arrow.right');
 
-     // Dentro del bucle forEach en tutoriales.js
-data.forEach(video => {
-  const cleanUrl = video.embedUrl.trim(); // ← Elimina espacios
-  const item = document.createElement('div');
-  item.classList.add('carousel-item');
-  item.innerHTML = `
-    <div class="video-embed-container">
-      <iframe 
-        src="${cleanUrl}" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen 
-        title="${video.title}"
-        class="youtube-embed">
-      </iframe>
-    </div>
-    <h4>${video.title}</h4>
-  `;
-  carouselInner.appendChild(item);
-});
+  leftArrow.addEventListener('click', () => {
+    carouselInner.scrollLeft -= itemWidth;
+  });
 
-      // Lógica para las flechas
-      leftArrow.addEventListener('click', () => {
-        carouselInner.scrollLeft -= itemWidth;
-      });
-
-      rightArrow.addEventListener('click', () => {
-        carouselInner.scrollLeft += itemWidth;
-      });
-    })
-    .catch(error => {
-      console.error('Error al cargar los videos:', error);
-      carouselInner.innerHTML = '<div class="carousel-placeholder">Error al cargar los videos.</div>';
-    });
+  rightArrow.addEventListener('click', () => {
+    carouselInner.scrollLeft += itemWidth;
+  });
 }
 
 // Inicializar al cargar
 document.addEventListener('DOMContentLoaded', function() {
-  loadVideos();
+  renderVideos();
 });
