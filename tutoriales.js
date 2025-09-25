@@ -33,14 +33,11 @@ function createVideoItem(video, index) {
   item.innerHTML = `
     <div class="video-embed-container">
       <iframe 
-        id="youtube-video-${index}" 
-        src="${video.embedUrl}?enablejsapi=1&autoplay=0" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen 
-        title="${video.title}"
-        class="youtube-embed">
-      </iframe>
+  src="https://www.youtube.com/embed/VIDEO_ID" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen>
+</iframe>
     </div>
     <h4>${video.title}</h4>
   `;
