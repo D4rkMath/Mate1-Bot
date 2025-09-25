@@ -1,14 +1,30 @@
 [
   {
-    "title": "Ejemplo de video 1",
-    "embedUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    "title": "Tabular: FX-570LA X",
+    "embedUrl": "https://www.youtube.com/shorts/NqdblaFQSxk"
   },
   {
-    "title": "Ejemplo de video 2",
-    "embedUrl": "https://www.youtube.com/embed/VIDEO_ID_AQUI"
+    "title": "Tabular: FX-991LA CW",
+    "embedUrl": "https://www.youtube.com/shorts/FTRo_VmowII"
   },
   {
-    "title": "Ejemplo de video 3",
-    "embedUrl": "https://www.youtube.com/embed/OTRO_VIDEO_ID"
+    "title": "Tabular: FX-82MS",
+    "embedUrl": "https://www.youtube.com/watch?v=9i-y5DV-f3E"
+  },
+  {
+    "title": "Ecuaciones: FX-570LA X",
+    "embedUrl": "https://www.youtube.com/shorts/Priv5nALwTI"
+  },
+  {
+    "title": "Ecuaciones: FX-991ES Plus",
+    "embedUrl": "https://www.youtube.com/shorts/JoIh-EXyixI"
+  },
+  {
+    "title": "Ecuaciones: FX-82MS",
+    "embedUrl": "https://www.youtube.com/watch?v=_ztzuv_hUEc"
+  },
+  {
+    "title": "Límites: FX-991CW",
+    "embedUrl": "https://www.youtube.com/watch?v=2DgH4wlJ-iA"
   }
 ]
