@@ -25,24 +25,26 @@ function loadVideos() {
       // Limpiar el carrusel
       carouselInner.innerHTML = '';
 
-      data.forEach(video => {
-        const item = document.createElement('div');
-        item.classList.add('carousel-item');
-        item.innerHTML = `
-          <div class="video-embed-container">
-            <iframe 
-              src="${video.embedUrl}" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen 
-              title="${video.title}"
-              class="youtube-embed">
-            </iframe>
-          </div>
-          <h4>${video.title}</h4>
-        `;
-        carouselInner.appendChild(item);
-      });
+     // Dentro del bucle forEach en tutoriales.js
+data.forEach(video => {
+  const cleanUrl = video.embedUrl.trim(); // ← Elimina espacios
+  const item = document.createElement('div');
+  item.classList.add('carousel-item');
+  item.innerHTML = `
+    <div class="video-embed-container">
+      <iframe 
+        src="${cleanUrl}" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen 
+        title="${video.title}"
+        class="youtube-embed">
+      </iframe>
+    </div>
+    <h4>${video.title}</h4>
+  `;
+  carouselInner.appendChild(item);
+});
 
       // Lógica para las flechas
       leftArrow.addEventListener('click', () => {
