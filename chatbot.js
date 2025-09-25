@@ -75,7 +75,8 @@ function sendMessage() {
 
    // Mostrar mensaje de espera + spinner
   addBotMessage(`
-    Enviando tu pregunta al Tutor virtual ... 
+    //Enviando tu pregunta al Tutor virtual ... 
+    Enviando tu pregunta al Math-GPT ... 
     <div class="loading-spinner"></div>
   `);
 
@@ -87,8 +88,12 @@ function sendMessage() {
   const timestamp = new Date().getTime();
 
   // Usar SOLO el parámetro ?q= (¡no ?prompt=!)
-  const fullUrl = `https://chatgpt.com/g/g-682e08db72c4819197938ac94c4ada63-tutor-virtual-para-el-curso-de-matematica-l/?prompt=${encodedMessage}&t=${timestamp}`;
+  // const fullUrl = `https://chatgpt.com/g/g-682e08db72c4819197938ac94c4ada63-tutor-virtual-para-el-curso-de-matematica-l/?prompt=${encodedMessage}&t=${timestamp}`;
 
+    // probando con MathGPT
+    const fullUrl = `https://math-gpt.org/?q=${encodedMessage}&t=${timestamp}`;
+
+    
   // Abrir en nueva pestaña
   window.open(fullUrl, "_blank", "noopener,noreferrer");
 
@@ -102,7 +107,7 @@ function sendMessage() {
     }
 
   // Confirmar al usuario
- // addBotMessage(`✅ ¡Listo! He enviado tu pregunta al Tutor virtual.`);
+ // addBotMessage(`✅ ¡Listo! He enviado tu pregunta a Math-GPT.`);
   },4000); // 4 segundos
 }
 
