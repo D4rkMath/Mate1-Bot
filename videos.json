@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Ejemplo de video 1",
+    "embedUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
+  {
+    "title": "Ejemplo de video 2",
+    "embedUrl": "https://www.youtube.com/embed/VIDEO_ID_AQUI"
+  },
+  {
+    "title": "Ejemplo de video 3",
+    "embedUrl": "https://www.youtube.com/embed/OTRO_VIDEO_ID"
+  }
+]
