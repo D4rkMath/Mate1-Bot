@@ -8,7 +8,8 @@ document.querySelector('.carousel-inner').innerHTML = `
       <iframe 
         src="https://www.youtube.com/embed/5Boyptd7wY8" 
         frameborder="0" 
-        allowfullscreen>
+        allowfullscreen
+        class="youtube-embed"> <!-- ✅ Esta clase es crucial -->
       </iframe>
     </div>
     <h4>Tabular: FX-991LA CW</h4>
