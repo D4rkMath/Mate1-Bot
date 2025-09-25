@@ -3,7 +3,7 @@
   display: flex;
   gap: 15px;
   width: 100%;
-  padding-top: 10px;
+  padding-top: 1px;
 }
 .tutorial-menu {
   flex: 0 0 180px;
