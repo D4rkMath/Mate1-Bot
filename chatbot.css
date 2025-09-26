@@ -65,7 +65,7 @@
 
 .chat-messages {
   flex: 1;
-  padding: 15px;
+  padding: 10px;
   overflow-y: auto;
   background: #f9f9f9;
 }
