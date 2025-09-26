@@ -38,7 +38,6 @@
 
 .video-carousel {
   flex: 1;
-  position: relative;
   background: #f8f9fa;
   border-radius: 8px;
   padding: 0;
@@ -47,39 +46,35 @@
   flex-direction: column;
 }
 
-/* Estilos de Swiper */
+/* === Swiper === */
 .swiper {
   width: 100%;
-  height: 100%;
   padding: 10px 0;
+  flex: 1;
 }
 
-/* === Control de tamaño del video === */
 .swiper-slide {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* El video va arriba, título abajo */
   padding: 10px;
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  /* Altura máxima del slide */
   max-height: 350px;
   overflow: hidden;
 }
 
-/* Contenedor del video (con relación 16:9) */
+/* Contenedor del video (16:9) */
 .swiper-slide .video-embed-container {
   width: 100%;
   padding-bottom: 56.25%; /* 16:9 */
   height: 0;
+  position: relative;
   overflow: hidden;
-  position: relative; /* ✅ Mantenemos esto para que el iframe funcione correctamente */
-  max-width: 100%;
 }
 
-/* Video incrustado */
 .swiper-slide .youtube-embed {
   position: absolute;
   top: 0;
@@ -87,11 +82,9 @@
   width: 100%;
   height: 100%;
   border: none;
-  max-height: 300px; /* Limita la altura máxima */
-  object-fit: contain; /* Asegura que no se distorsione */
 }
 
-/* Título debajo del video */
+/* Título del video */
 .swiper-slide .video-title {
   font-size: 0.9rem;
   margin: 10px 0 0;
@@ -102,7 +95,7 @@
   word-wrap: break-word;
 }
 
-/* Botones de navegación */
+/* Botones de navegación de Swiper */
 .swiper-button-prev,
 .swiper-button-next {
   color: rgba(0, 102, 255, 0.8);
@@ -127,24 +120,17 @@
 }
 
 /* Paginación (opcional) */
+.swiper-pagination {
+  margin-top: 10px;
+}
+
 .swiper-pagination-bullet {
   background: rgba(0, 102, 255, 0.5);
   opacity: 1;
+  width: 10px;
+  height: 10px;
 }
 
 .swiper-pagination-bullet-active {
   background: rgba(0, 102, 255, 1);
-}
-
-/* Alineación de los botones con el título */
-.swiper-navigation-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  padding: 8px 0;
-  background: #f8f9fa;
-  border-top: 1px solid #ddd;
-  margin-top: auto;
 }
