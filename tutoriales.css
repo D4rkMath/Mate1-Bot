@@ -82,6 +82,8 @@
   width: 100%;
   height: 100%;
   border: none;
+  max-height: 300px; /* Limita la altura máxima del video */
+  object-fit: contain; /* Asegura que el video se vea completo sin recortes */
 }
 
 /* Título del video */
