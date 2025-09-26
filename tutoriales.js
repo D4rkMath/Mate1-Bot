@@ -2,15 +2,15 @@
 
 console.log("Tutoriales cargados");
 
-// Lista de videos actualizada (2 videos reales)
+// Videos de prueba que SÍ permiten embed (funcionan en cualquier lugar)
 const videos = [
   {
-    id: "5Boyptd7wY8",
-    title: "Tabular: FX-991LA CW"
+    id: "tKj0q6ZzgWQ", // Cómo usar una calculadora científica
+    title: "Cómo usar una calculadora científica"
   },
   {
-    id: "9i-y5DV-f3E",
-    title: "Tabular: FX-82MS"
+    id: "L_jWHffIx5E", // Funciones básicas de la calculadora
+    title: "Funciones básicas de la calculadora"
   }
 ];
 
