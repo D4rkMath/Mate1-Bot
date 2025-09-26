@@ -5,7 +5,7 @@ console.log("Tutoriales cargados");
 // Videos de prueba que SÍ permiten embed (funcionan en cualquier lugar)
 const videos = [
   {
-    id: "tKj0q6ZzgWQ", // Cómo usar una calculadora científica
+    id: "5Boyptd7wY8", // Cómo usar una calculadora científica
     title: "Cómo usar una calculadora científica"
   },
   {
