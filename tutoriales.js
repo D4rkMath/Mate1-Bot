@@ -9,9 +9,14 @@ document.querySelector('.carousel-inner').innerHTML = `
         src="https://www.youtube.com/embed/5Boyptd7wY8" 
         frameborder="0" 
         allowfullscreen
-        class="youtube-embed"> <!-- ✅ Esta clase es crucial -->
+        class="youtube-embed">
       </iframe>
     </div>
-    <h4>Tabular: FX-991LA CW</h4>
+    <!-- Contenedor para alinear botones y título -->
+    <div class="video-title-row">
+      <button class="title-arrow left">❮</button>
+      <h4 class="video-title">Tabular: FX-991LA CW</h4>
+      <button class="title-arrow right">❯</button>
+    </div>
   </div>
 `;
