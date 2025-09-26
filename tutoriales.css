@@ -1,16 +1,19 @@
 /* tutoriales.css */
+
 .tutorial-container {
   display: flex;
   gap: 15px;
   width: 100%;
   padding-top: 1px;
 }
+
 .tutorial-menu {
   flex: 0 0 180px;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
+
 .tutorial-item {
   width: 100%;
   padding: 10px 12px;
@@ -23,33 +26,40 @@
   text-align: left;
   transition: background 0.2s;
 }
+
 .tutorial-item:hover {
   background: #0052cc;
 }
+
 .tutorial-item.active {
   background: #0040a0;
   font-weight: bold;
 }
+
 .video-carousel {
   flex: 1;
   position: relative;
   background: #f8f9fa;
   border-radius: 8px;
-  padding: 0px;
+  padding: 0;
   min-height: 220px;
-  display: block;
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
+
+/* Carrusel de videos */
 .carousel-inner {
   display: flex;
   gap: 15px;
   overflow-x: hidden;
   scroll-behavior: smooth;
   width: 100%;
+  padding: 10px 0;
+  flex: 1;
 }
+
 .carousel-item {
-  min-width: 330px; /* Igual al max-width de Video_General */
+  min-width: 330px;
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -58,73 +68,16 @@
   flex-direction: column;
   align-items: center;
 }
-.carousel-item img {
+
+.carousel-item .video-embed-container {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-.carousel-item img:hover {
-  transform: scale(1.02);
-}
-.carousel-item h4 {
-  font-size: 0.9rem;
-  margin: 0.4rem;
-  text-align: center;
-  font-weight: 600;
-  color: #333;
-}
-
-/* Contenedor de las flechas (en la parte inferior) */
-.carousel-navigation {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
-  position: relative;
-}
-
-/* Flechas de navegación */
-.carousel-arrow {
-  background: rgba(0, 102, 255, 0.8);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s;
-}
-
-.carousel-arrow:hover {
-  background: rgba(0, 82, 204, 0.9);
-}
-
-/* Mensaje cuando no hay videos */
-.carousel-placeholder {
-  text-align: center;
-  color: #666;
-  font-style: italic;
-}
-/* Contenedor del iframe */
-.video-embed-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+  padding-bottom: 56.25%; /* 16:9 */
   height: 0;
   overflow: hidden;
+  position: relative;
 }
 
-/* Estilo del iframe */
-.youtube-embed {
+.carousel-item .youtube-embed {
   position: absolute;
   top: 0;
   left: 0;
@@ -132,17 +85,59 @@
   height: 100%;
   border: none;
 }
-/* Botón de pantalla completa (se muestra cuando el usuario pasa el mouse sobre el video) */
-.youtube-embed:hover::after {
-  content: "🔍";
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.7);
+
+/* Ocultamos el título dentro del item */
+.carousel-item h4 {
+  display: none;
+}
+
+/* Barra de título con botones */
+.video-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 0;
+  background: #f8f9fa;
+  border-top: 1px solid #ddd;
+  margin-top: auto;
+}
+
+.video-title {
+  font-size: 0.9rem;
+  margin: 0;
+  text-align: center;
+  font-weight: 600;
+  color: #333;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.title-arrow {
+  background: rgba(0, 102, 255, 0.8);
   color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 0.8rem;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1rem;
   cursor: pointer;
-  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.title-arrow:hover {
+  background: rgba(0, 82, 204, 0.9);
+}
+
+.carousel-placeholder {
+  text-align: center;
+  color: #666;
+  font-style: italic;
 }
