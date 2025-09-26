@@ -1,11 +1,42 @@
 <!-- tutoriales.html -->
 <div class="tutorial-container">
   <div class="video-carousel">
-    <div class="carousel-inner"></div>
-    <div class="video-title-row">
-      <button class="title-arrow left">❮</button>
-      <h4 class="video-title">Cargando...</h4>
-      <button class="title-arrow right">❯</button>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="video-embed-container">
+            <iframe 
+              src="https://www.youtube.com/embed/5Boyptd7wY8" 
+              frameborder="0" 
+              allowfullscreen
+              class="youtube-embed">
+            </iframe>
+          </div>
+          <h4 class="video-title">Cómo usar una calculadora científica</h4>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="video-embed-container">
+            <iframe 
+              src="https://www.youtube.com/embed/9i-y5DV-f3E" 
+              frameborder="0" 
+              allowfullscreen
+              class="youtube-embed">
+            </iframe>
+          </div>
+          <h4 class="video-title">Funciones básicas de la calculadora</h4>
+        </div>
+      </div>
+
+      <!-- Navegación -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- Paginación (opcional) -->
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </div>
