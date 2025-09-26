@@ -49,7 +49,7 @@
 /* === Swiper === */
 .swiper {
   width: 100%;
-    max-width: 300px; /* Limita el ancho máximo del slider */
+    max-width: 400px; /* Limita el ancho máximo del slider */
   padding: 10px 0;
   flex: 1;
 }
