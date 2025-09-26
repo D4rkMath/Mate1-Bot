@@ -49,6 +49,7 @@
 /* === Swiper === */
 .swiper {
   width: 100%;
+    max-width: 500px; /* Limita el ancho máximo del slider */
   padding: 10px 0;
   flex: 1;
 }
@@ -64,6 +65,7 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   max-height: 350px;
   overflow: hidden;
+  max-width: 100%; /* Asegura que no exceda el ancho del contenedor */
 }
 
 /* Contenedor del video (16:9) */
