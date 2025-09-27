@@ -50,7 +50,7 @@
 .swiper {
   width: 100%;
     max-width: 300px; /* Limita el ancho máximo del slider */
-  padding: 10px 0;
+  padding: 2px 0;
   flex: 1;
 }
 
