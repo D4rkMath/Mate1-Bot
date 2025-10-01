@@ -3,38 +3,66 @@
   <div class="video-carousel">
     <!-- Swiper -->
     <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <!-- Slide 1 -->
-        <div class="swiper-slide">
-          <div class="video-embed-container">
-            <iframe 
-              src="https://www.youtube.com/embed/5Boyptd7wY8" 
-              frameborder="0" 
-              allowfullscreen
-              class="youtube-embed">
-            </iframe>
-          </div>
-          <h4 class="video-title">Tabular: FX-991LA CW</h4>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="swiper-slide">
-          <div class="video-embed-container">
-            <iframe 
-              src="https://www.youtube.com/embed/9i-y5DV-f3E"" 
-              frameborder="0" 
-              allowfullscreen
-              class="youtube-embed">
-            </iframe>
-          </div>
-          <h4 class="video-title">Tabular: FX-82MS</h4>
-        </div>
-      </div>
+      <div class="swiper-wrapper" id="swiper-wrapper"></div>
 
       <!-- Navegación -->
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
-
     </div>
   </div>
 </div>
+
+<!-- Script para cargar videos desde JSON -->
+<script>
+  // Cargar videos desde videos.json
+  fetch('videos.json')
+    .then(response => response.json())
+    .then(videos => {
+      const swiperWrapper = document.getElementById('swiper-wrapper');
+      swiperWrapper.innerHTML = ''; // Limpiar contenido anterior
+
+      videos.forEach(video => {
+        const slide = document.createElement('div');
+        slide.className = 'swiper-slide';
+        slide.innerHTML = `
+          <div class="video-embed-container">
+            <iframe 
+              src="${video.embedUrl}" 
+              frameborder="0" 
+              allowfullscreen
+              class="youtube-embed">
+            </iframe>
+          </div>
+          <h4 class="video-title">${video.title}</h4>
+        `;
+        swiperWrapper.appendChild(slide);
+      });
+
+      // Inicializar Swiper después de cargar los videos
+      initializeSwiper();
+    })
+    .catch(error => console.error('Error al cargar videos:', error));
+
+  function initializeSwiper() {
+    const swiper = new Swiper('.mySwiper', {
+      loop: false,
+      slidesPerView: 1,
+      spaceBetween: 15,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      on: {
+        slideChange: function () {
+          const currentSlide = this.slides[this.activeIndex];
+          const title = currentSlide.querySelector('.video-title').textContent;
+          console.log("Video actual:", title);
+        }
+      }
+    });
+  }
+</script>
